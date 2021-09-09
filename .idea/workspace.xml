@@ -5,30 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.09">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/my_go_lib.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/.idea/my-algo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BidirectionalLinkedList.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/LinkedList.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyStack.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/st/st_benckmark_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/st/testdata/st_test_data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

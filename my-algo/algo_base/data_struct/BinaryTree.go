@@ -27,6 +27,8 @@ func MidOrderVisit(bt *BinaryTree) {
 func PostOrderVisit(bt *BinaryTree) {
 
 }
+
+// probloly a mistake
 func NonRecursionDfs(bt *BinaryTree) {
 	var s MyStack
 	s.Push(bt)
@@ -36,15 +38,25 @@ func NonRecursionDfs(bt *BinaryTree) {
 			bt = bt.left
 		}
 		if !s.IsEmpty() {
-			if bt, err := s.Top(); err != nil {
-				bt = bt.(*BinaryTree)
+			if tBin, err := s.Top(); err != nil {
+				bt = tBin.(*BinaryTree)
 			}
-			s.Pop()
-			s.Push(bt.right)
+			if err := s.Pop(); err == nil {
+				s.Push(bt.right)
+			}
 		}
 	}
 }
 
-func Bfs() {
-
+func Bfs(bt *BinaryTree) {
+	var q MyQueue
+	q.Push(bt)
+	for !q.IsEmpty() {
+		tBin, err := q.Front()
+		seq = append(seq, tBin)
+		if err == nil {
+			q.Push(tBin.(*BinaryTree).left)
+			q.Push(tBin.(*BinaryTree).right)
+		}
+	}
 }

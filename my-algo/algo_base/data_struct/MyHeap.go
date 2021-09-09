@@ -25,14 +25,14 @@ func (heap *MyHeap) Push(value interface{}) {
 }
 func (heap *MyHeap) Pop() error {
 	if heap.IsEmpty() {
-		return errors.New("Index out of bounds,heap len = 0! ")
+		return errors.New("Index is out of bounds,heap len = 0! ")
 	}
 	heap.IntSlice = heap.IntSlice[:len(heap.IntSlice)-1]
 	return nil
 }
 func (heap *MyHeap) Top() (interface{}, error) {
 	if heap.IsEmpty() {
-		return nil, errors.New("Index out of bounds,heap len = 0! ")
+		return nil, errors.New("Index is out of bounds,heap len = 0! ")
 	}
 	return heap.IntSlice[len(heap.IntSlice)-1], nil
 }
