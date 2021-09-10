@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.09">
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/RB.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/SkipList.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/0910_1894.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/problem_test.go" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.10">
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BidirectionalLinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BidirectionalLinkedList.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/LinkedList.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyHeap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyQueue.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyStack.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyStack.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/go.mod" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +160,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="algo_base add . 2021.09.09" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo_base add . 2021.09.09" />
+    <MESSAGE value="algo_base add . 2021.09.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo_base add . 2021.09.10" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
