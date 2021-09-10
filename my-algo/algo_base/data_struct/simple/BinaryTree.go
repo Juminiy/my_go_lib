@@ -1,4 +1,10 @@
-package data_struct
+package simple
+
+const (
+	binLevel          = 31
+	averageNodeAmount = 1 << 15
+	maxNodeAmount     = 1 << binLevel
+)
 
 type BinaryTree struct {
 	left, right *BinaryTree
@@ -8,6 +14,9 @@ type BinSequence []interface{}
 
 var seq BinSequence
 
+func forTestInit() {
+	seq = make([]interface{}, 0)
+}
 func PreOrderVisit(bt *BinaryTree) {
 	if bt != nil {
 		seq = append(seq, bt.value)
@@ -29,34 +38,45 @@ func PostOrderVisit(bt *BinaryTree) {
 }
 
 // probloly a mistake
-func NonRecursionDfs(bt *BinaryTree) {
+func NonRecursionDfs(bt *BinaryTree) []interface{} {
 	var s MyStack
-	s.Push(bt)
+	ansSeq := make([]interface{}, 0)
 	for bt != nil || !s.IsEmpty() {
 		for bt != nil {
 			s.Push(bt)
+			ansSeq = append(ansSeq, bt.value)
 			bt = bt.left
 		}
 		if !s.IsEmpty() {
-			if tBin, err := s.Top(); err != nil {
+			if tBin, err := s.Top(); err == nil {
 				bt = tBin.(*BinaryTree)
 			}
 			if err := s.Pop(); err == nil {
-				s.Push(bt.right)
+				bt = bt.right
 			}
 		}
 	}
+	return ansSeq
 }
 
-func Bfs(bt *BinaryTree) {
+func Bfs(bt *BinaryTree) []interface{} {
 	var q MyQueue
+	ansSeq := make([]interface{}, 0)
 	q.Push(bt)
 	for !q.IsEmpty() {
 		tBin, err := q.Front()
-		seq = append(seq, tBin)
+		q.Pop()
+		if tBin != nil {
+			ansSeq = append(ansSeq, tBin.(*BinaryTree).value)
+		}
 		if err == nil {
-			q.Push(tBin.(*BinaryTree).left)
-			q.Push(tBin.(*BinaryTree).right)
+			if tBin.(*BinaryTree).left != nil {
+				q.Push(tBin.(*BinaryTree).left)
+			}
+			if tBin.(*BinaryTree).right != nil {
+				q.Push(tBin.(*BinaryTree).right)
+			}
 		}
 	}
+	return ansSeq
 }

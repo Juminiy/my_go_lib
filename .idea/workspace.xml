@@ -5,20 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.09">
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/RB.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/SkipList.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/0910_1894.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/problem_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BidirectionalLinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BidirectionalLinkedList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/LinkedList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyHeap.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyHeap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyQueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyQueue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/MyStack.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyStack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../my-environment/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
@@ -38,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -48,7 +76,82 @@
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="Docker" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_base\data_struct\simple" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_base\data_struct\complicated" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.TestNonRecursionDfs in my_algo/algo_base/data_struct">
+    <configuration name="go build my_algo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo" />
+      <kind value="PACKAGE" />
+      <package value="my_algo" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/my-algo/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestBfs in my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
+      <root_directory value="$PROJECT_DIR$/my-algo" />
+      <kind value="PACKAGE" />
+      <package value="my_algo/algo_base/data_struct" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestBfs\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestMyQueue_Front in my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
+      <root_directory value="$PROJECT_DIR$/my-algo" />
+      <kind value="PACKAGE" />
+      <package value="my_algo/algo_base/data_struct" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestMyQueue_Front\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestMySort_MyQuickSort in my_algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/algo_basic" />
+      <root_directory value="$PROJECT_DIR$/my-algo" />
+      <kind value="PACKAGE" />
+      <package value="my_algo/algo_base/algo_basic" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestMySort_MyQuickSort\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestNonRecursionDfs in my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
+      <root_directory value="$PROJECT_DIR$/my-algo" />
+      <kind value="PACKAGE" />
+      <package value="my_algo/algo_base/data_struct" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestNonRecursionDfs\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestNonRecursionDfs in my_algo/algo_base/data_struct" />
+        <item itemvalue="Go Test.TestBfs in my_algo/algo_base/data_struct" />
+        <item itemvalue="Go Test.TestMyQueue_Front in my_algo/algo_base/data_struct" />
+        <item itemvalue="Go Build.go build my_algo" />
+        <item itemvalue="Go Test.TestMySort_MyQuickSort in my_algo/algo_base/algo_basic" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -64,6 +167,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
