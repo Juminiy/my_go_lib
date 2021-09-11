@@ -52,6 +52,7 @@ func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 		fmt.Printf("Location[%d]'s address is[%p],value is[%v]\n", i, &value, value)
 	}
 }
+
 func (graph *AdjGraph) BfsGraph() []interface{} {
 	// fmt.Println(&graph);fmt.Println("---------------------")
 	if graph == nil || graph.Nodes == nil || len(graph.Nodes) == 0 {
@@ -59,21 +60,24 @@ func (graph *AdjGraph) BfsGraph() []interface{} {
 	}
 	q, seqNodes, visNode := &simple.MyQueue{}, make([]interface{}, 0), &MySet{}
 	visNode.Construct()
-	q.Push(graph.Nodes[0])
-	for !q.IsEmpty() {
-		var curNode *GraphNode
-		if tNode, err := q.Front(); err == nil {
-			curNode = tNode.(*GraphNode)
-			seqNodes = append(seqNodes, curNode)
-			visNode.Insert(curNode)
+	for _, curNode := range graph.Nodes {
+		if !visNode.Exist(curNode) {
+			q.Push(curNode)
 		}
-		q.Pop()
-		// fmt.Println(tNode)
-		// adjNode := graph.Adjacent[*tNode]
-		// fmt.Println(adjNode)
-		for _, adjNode := range graph.Adjacent[*curNode] {
-			if !visNode.Exist(adjNode) {
-				q.Push(adjNode)
+		for !q.IsEmpty() {
+			if tNode, err := q.Front(); err == nil {
+				curNode = tNode.(*GraphNode)
+				seqNodes = append(seqNodes, curNode)
+				visNode.Insert(curNode)
+			}
+			q.Pop()
+			// fmt.Println(tNode)
+			// adjNode := graph.Adjacent[*tNode]
+			// fmt.Println(adjNode)
+			for _, adjNode := range graph.Adjacent[*curNode] {
+				if !visNode.Exist(adjNode) {
+					q.Push(adjNode)
+				}
 			}
 		}
 	}
@@ -87,38 +91,40 @@ func (graph *AdjGraph) DfsGraph() []interface{} {
 	}
 	s, seqNodes, visNodes := &simple.MyStack{}, make([]interface{}, 0), &MySet{}
 	visNodes.Construct()
-	curNode := graph.Nodes[0]
-	for !s.IsEmpty() || curNode != nil {
-		for curNode != nil {
-			s.Push(curNode)
-			seqNodes = append(seqNodes, curNode)
-			visNodes.Insert(curNode)
-			if graph.Adjacent[*curNode] != nil {
-				curNode = graph.Adjacent[*curNode][0]
-				if visNodes.Exist(curNode) {
+	for _, curNode := range graph.Nodes {
+		for !s.IsEmpty() || (curNode != nil && !visNodes.Exist(curNode)) {
+			for curNode != nil {
+				s.Push(curNode)
+				seqNodes = append(seqNodes, curNode)
+				visNodes.Insert(curNode)
+				if graph.Adjacent[*curNode] != nil {
+					curNode = graph.Adjacent[*curNode][0]
+					if visNodes.Exist(curNode) {
+						curNode = nil
+					}
+				} else {
 					curNode = nil
 				}
-			} else {
-				curNode = nil
 			}
-		}
-		if !s.IsEmpty() {
-			if tNode, err := s.Top(); err == nil {
-				curNode = tNode.(*GraphNode)
-			}
-			for _, tNode := range graph.Adjacent[*curNode] {
-				if !visNodes.Exist(tNode) {
-					s.Push(tNode)
-					curNode = tNode
-					break
+			if !s.IsEmpty() {
+				if tNode, err := s.Top(); err == nil {
+					curNode = tNode.(*GraphNode)
 				}
-			}
-			if err := s.Pop(); err == nil {
-				if visNodes.Exist(curNode) {
-					curNode = nil
+				for _, tNode := range graph.Adjacent[*curNode] {
+					if !visNodes.Exist(tNode) {
+						s.Push(tNode)
+						curNode = tNode
+						break
+					}
+				}
+				if err := s.Pop(); err == nil {
+					if visNodes.Exist(curNode) {
+						curNode = nil
+					}
 				}
 			}
 		}
 	}
+
 	return seqNodes
 }

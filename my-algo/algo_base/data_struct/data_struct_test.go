@@ -72,6 +72,10 @@ func TestBfsGraph(t *testing.T) {
 	adj.AddNode(nodee)
 	edgeab, edgeac, edgead, edgebe := &complicated.GraphEdge{"1"}, &complicated.GraphEdge{"2"}, &complicated.GraphEdge{"3"}, &complicated.GraphEdge{"4"}
 	edgeea := &complicated.GraphEdge{5}
+	nodeg := &complicated.GraphNode{"G"}
+	adj.AddNode(nodeg)
+	edgega := &complicated.GraphEdge{8}
+	adj.AddEdge(nodeg, nodea, edgega)
 	adj.AddEdge(nodea, nodeb, edgeab)
 	adj.AddEdge(nodea, nodec, edgeac)
 	adj.AddEdge(nodea, noded, edgead)
@@ -83,5 +87,5 @@ func TestBfsGraph(t *testing.T) {
 	//fmt.Println("nodea",&nodea);fmt.Println("nodeb",&nodeb);fmt.Println("nodec",&nodec);fmt.Println("noded",&noded);fmt.Println("nodee",&nodee)
 	//fmt.Println(adj.Adjacent)
 	//fmt.Println(&adj)
-	adj.PrintNodes(adj.DfsGraph())
+	adj.PrintNodes(adj.BfsGraph())
 }

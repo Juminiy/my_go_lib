@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.11">
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.11 复杂数据结构太刺激了，尤其是自己造轮子，指针乱跑！！！">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
@@ -160,7 +160,8 @@
     <MESSAGE value="algo_base add . 2021.09.09" />
     <MESSAGE value="algo_base add . 2021.09.10" />
     <MESSAGE value="algo_base add . 2021.09.11" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo_base add . 2021.09.11" />
+    <MESSAGE value="data_struct update 2021.09.11 复杂数据结构太刺激了，尤其是自己造轮子，指针乱跑！！！" />
+    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.11 复杂数据结构太刺激了，尤其是自己造轮子，指针乱跑！！！" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -169,5 +170,21 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go</url>
+          <line>89</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go</url>
+          <line>85</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
