@@ -1,6 +1,6 @@
 package st
 
-import "my_algo/algo_base/algo_basic"
+import "github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic"
 
 const (
 	maxGap = 31

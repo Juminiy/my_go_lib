@@ -7,8 +7,8 @@ const (
 )
 
 type BinaryTree struct {
-	left, right *BinaryTree
-	value       interface{}
+	Left, Right *BinaryTree
+	Value       interface{}
 }
 type BinSequence []interface{}
 
@@ -19,17 +19,17 @@ func forTestInit() {
 }
 func PreOrderVisit(bt *BinaryTree) {
 	if bt != nil {
-		seq = append(seq, bt.value)
-		PreOrderVisit(bt.left)
-		PreOrderVisit(bt.right)
+		seq = append(seq, bt.Value)
+		PreOrderVisit(bt.Left)
+		PreOrderVisit(bt.Right)
 	}
 }
 
 func MidOrderVisit(bt *BinaryTree) {
 	if bt != nil {
-		MidOrderVisit(bt.left)
-		seq = append(seq, bt.value)
-		MidOrderVisit(bt.right)
+		MidOrderVisit(bt.Left)
+		seq = append(seq, bt.Value)
+		MidOrderVisit(bt.Right)
 	}
 }
 
@@ -44,15 +44,15 @@ func NonRecursionDfs(bt *BinaryTree) []interface{} {
 	for bt != nil || !s.IsEmpty() {
 		for bt != nil {
 			s.Push(bt)
-			ansSeq = append(ansSeq, bt.value)
-			bt = bt.left
+			ansSeq = append(ansSeq, bt.Value)
+			bt = bt.Left
 		}
 		if !s.IsEmpty() {
 			if tBin, err := s.Top(); err == nil {
 				bt = tBin.(*BinaryTree)
 			}
 			if err := s.Pop(); err == nil {
-				bt = bt.right
+				bt = bt.Right
 			}
 		}
 	}
@@ -67,14 +67,14 @@ func Bfs(bt *BinaryTree) []interface{} {
 		tBin, err := q.Front()
 		q.Pop()
 		if tBin != nil {
-			ansSeq = append(ansSeq, tBin.(*BinaryTree).value)
+			ansSeq = append(ansSeq, tBin.(*BinaryTree).Value)
 		}
 		if err == nil {
-			if tBin.(*BinaryTree).left != nil {
-				q.Push(tBin.(*BinaryTree).left)
+			if tBin.(*BinaryTree).Left != nil {
+				q.Push(tBin.(*BinaryTree).Left)
 			}
-			if tBin.(*BinaryTree).right != nil {
-				q.Push(tBin.(*BinaryTree).right)
+			if tBin.(*BinaryTree).Right != nil {
+				q.Push(tBin.(*BinaryTree).Right)
 			}
 		}
 	}

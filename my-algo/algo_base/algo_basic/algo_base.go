@@ -3,8 +3,9 @@ package algo_basic
 // 算法经过 https://luogu.com.cn/problem/P1177 测试，保证正确性
 
 const (
-	maxBit    = 30
-	maxArrLen = 1e6
+	maxBit        = 30
+	maxArrLen     = 1e6
+	notFoundIndex = -1
 )
 
 func MaxValue(compValue, compedValue int) int {
@@ -100,9 +101,11 @@ func (mySort *MySort) MyMergeSort(arr []int, l, r int) {
 	}
 }
 
+// BinarySearch must be sorted Arr else Meaningless
+// but the algo is not accurate when the same element occurs over twice times.
 func BinarySearch(arr []int, l, r, value int) int {
 	mid := 0
-	for l < r {
+	for l <= r {
 		mid = (r-l)/2 + l
 		if arr[mid] == value {
 			return mid
@@ -112,15 +115,37 @@ func BinarySearch(arr []int, l, r, value int) int {
 			l = mid + 1
 		}
 	}
-	return -1
+	return notFoundIndex
 }
 
-// TODO
+// LowerBound from l find the first arr[i] <= value
+// example. {10,10,20,20,20,20,30,30},0,7,20 return index is 2
+// algo complex is O(log(r-l))
 func LowerBound(arr []int, l, r, value int) int {
-	return BinarySearch(arr, l, r, value)
+	dist, step, cur := r-l+1, 0, 0
+	for dist > 0 {
+		cur, step, cur = l, dist/2, step+cur
+		if arr[cur] < value {
+			l, dist = cur+1, dist-step-1
+		} else {
+			dist = step
+		}
+	}
+	return l
 }
 
-// TODO
+// UpperBound from r find the first arr[i] > value
+// example. {10,10,20,20,20,20,30,30},0,7,20 return index is 6
+// algo complex is O(log(r-l))
 func UpperBound(arr []int, l, r, value int) int {
-	return BinarySearch(arr, l, r, value)
+	dist, step, cur := r-l+1, 0, 0
+	for dist > 0 {
+		cur, step, cur = l, dist/2, step+cur
+		if !(value < arr[cur]) {
+			l, dist = cur+1, dist-step-1
+		} else {
+			dist = step
+		}
+	}
+	return l
 }

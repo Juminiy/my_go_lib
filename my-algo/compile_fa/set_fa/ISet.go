@@ -7,3 +7,9 @@ type LimitSet struct {
 type InputSet struct {
 	CharSet []byte
 }
+
+type DFATable struct {
+	State       *LimitSet
+	Input       *InputSet
+	ChangeTable [][]interface{}
+}

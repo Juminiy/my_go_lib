@@ -2,7 +2,8 @@ package data_struct
 
 import (
 	"fmt"
-	"my_algo/algo_base/data_struct/simple"
+	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
+	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
 	"testing"
 )
 
@@ -45,17 +46,34 @@ func TestMyQueue_Front(t *testing.T) {
 }
 
 func TestBfs(t *testing.T) {
-	node3 := simple.BinaryTree{nil, nil, 4}
-	node2 := simple.BinaryTree{nil, nil, 3}
-	node1 := simple.BinaryTree{&node3, nil, 2}
-	root := &simple.BinaryTree{&node1, &node2, 1}
+	node3 := simple.BinaryTree{Value: 4}
+	node2 := simple.BinaryTree{Value: 3}
+	node1 := simple.BinaryTree{Left: &node3, Value: 2}
+	root := &simple.BinaryTree{Left: &node1, Right: &node2, Value: 1}
 	fmt.Println(simple.Bfs(root))
 }
 
 func TestNonRecursionDfs(t *testing.T) {
-	node3 := simple.BinaryTree{nil, nil, 4}
-	node2 := simple.BinaryTree{nil, nil, 3}
-	node1 := simple.BinaryTree{&node3, nil, 2}
-	root := &simple.BinaryTree{&node1, &node2, 1}
+	node3 := simple.BinaryTree{Value: 4}
+	node2 := simple.BinaryTree{Value: 3}
+	node1 := simple.BinaryTree{Left: &node3, Value: 2}
+	root := &simple.BinaryTree{Left: &node1, Right: &node2, Value: 1}
 	fmt.Println(simple.NonRecursionDfs(root))
+}
+
+func TestBfsGraph(t *testing.T) {
+	adj := &complicated.AdjGraph{}
+	adj.Construct(true)
+	nodea, nodeb, nodec, noded, nodee := &complicated.GraphNode{Value: "A"}, &complicated.GraphNode{Value: "B"}, &complicated.GraphNode{Value: "C"}, &complicated.GraphNode{Value: "D"}, &complicated.GraphNode{Value: "E"}
+	adj.AddNode(nodea)
+	adj.AddNode(nodeb)
+	adj.AddNode(nodec)
+	adj.AddNode(noded)
+	adj.AddNode(nodee)
+	edgeab, edgeac, edgead, edgebe := &complicated.GraphEdge{"1"}, &complicated.GraphEdge{"2"}, &complicated.GraphEdge{"3"}, &complicated.GraphEdge{"4"}
+	adj.AddEdge(nodea, nodeb, edgeab)
+	adj.AddEdge(nodea, nodec, edgeac)
+	adj.AddEdge(nodea, noded, edgead)
+	adj.AddEdge(nodeb, nodee, edgebe)
+	fmt.Println(adj.BfsGraph())
 }

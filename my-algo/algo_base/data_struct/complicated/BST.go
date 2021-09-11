@@ -11,7 +11,7 @@ const (
 
 type bstNode struct {
 	value       interface{}
-	left, right *bstNode
+	Left, Right *bstNode
 	valueAmount int
 	// valueComp interface{}
 }
@@ -39,9 +39,9 @@ func addIntNode(node *bstNode, value interface{}) *bstNode {
 	if cmpRes == 0 {
 		node.valueAmount++
 	} else if cmpRes == 1 {
-		node = addIntNode(node.left, value)
+		node = addIntNode(node.Left, value)
 	} else {
-		node = addIntNode(node.right, value)
+		node = addIntNode(node.Right, value)
 	}
 	return node
 }
@@ -56,9 +56,9 @@ func deleteIntNode(node *bstNode, value interface{}) *bstNode {
 			node.valueAmount--
 		}
 	} else if cmpRes == 1 {
-		node = deleteIntNode(node.left, value)
+		node = deleteIntNode(node.Left, value)
 	} else {
-		node = deleteIntNode(node.right, value)
+		node = deleteIntNode(node.Right, value)
 	}
 	return node
 }

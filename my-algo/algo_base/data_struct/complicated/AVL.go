@@ -1,6 +1,8 @@
 package complicated
 
-import "my_algo/algo_base/algo_basic"
+import (
+	"github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic"
+)
 
 const (
 	immutableBalanceFactor = 1
@@ -9,9 +11,9 @@ const (
 )
 
 type avlNode struct {
-	bf          int
-	left, right *avlNode
-	value       interface{}
+	Bf          int
+	Left, Right *avlNode
+	Value       interface{}
 }
 
 // for realTime calculation
@@ -19,11 +21,11 @@ func nodeDepth(node *avlNode) int {
 	if node == nil {
 		return 0
 	}
-	return algo_basic.MaxValue(nodeDepth(node.left), nodeDepth(node.right)) + 1
+	return algo_basic.MaxValue(nodeDepth(node.Left), nodeDepth(node.Right)) + 1
 }
 
 func (node *avlNode) balanceFactor() {
-	node.bf = nodeDepth(node.left) - nodeDepth(node.right)
+	node.Bf = nodeDepth(node.Left) - nodeDepth(node.Right)
 }
 
 // ll型

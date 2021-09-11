@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.10">
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +73,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Docker" />
+    <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -73,12 +81,12 @@
       <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_base\data_struct\complicated" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestNonRecursionDfs in my_algo/algo_base/data_struct">
-    <configuration name="go build my_algo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestBfsGraph in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct">
+    <configuration name="go build github.com/Juminiy/my_go_lib/my-algo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my-algo" />
+      <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="my_algo" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/my-algo/main.go" />
       <method v="2" />
@@ -95,6 +103,18 @@
       <pattern value="^\QTestBfs\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestBfsGraph in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestBfsGraph\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestMyQueue_Front in my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
@@ -105,18 +125,6 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestMyQueue_Front\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestMySort_MyQuickSort in my_algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/algo_basic" />
-      <root_directory value="$PROJECT_DIR$/my-algo" />
-      <kind value="PACKAGE" />
-      <package value="my_algo/algo_base/algo_basic" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestMySort_MyQuickSort\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestNonRecursionDfs in my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -133,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestBfsGraph in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
+        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib/my-algo" />
         <item itemvalue="Go Test.TestNonRecursionDfs in my_algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestBfs in my_algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestMyQueue_Front in my_algo/algo_base/data_struct" />
-        <item itemvalue="Go Build.go build my_algo" />
-        <item itemvalue="Go Test.TestMySort_MyQuickSort in my_algo/algo_base/algo_basic" />
       </list>
     </recent_temporary>
   </component>
@@ -170,5 +178,21 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go</url>
+          <line>78</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go</url>
+          <line>43</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
