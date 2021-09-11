@@ -4,26 +4,14 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.11 图指针准确定位">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/compile_fa/graph_fa/graph_fa.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/config/env.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/middleware/middle.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/model/model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/router/algo_api.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/server/apiserver.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/service/algo_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/utils/utils.go" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.11 19:15.pm 开放REST api">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/storage/mysql.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/model/model.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +55,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -79,7 +68,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -177,7 +166,9 @@
     <MESSAGE value="algo_base add . 2021.09.11" />
     <MESSAGE value="data_struct update 2021.09.11 复杂数据结构太刺激了，尤其是自己造轮子，指针乱跑！！！" />
     <MESSAGE value="data_struct update 2021.09.11 图指针准确定位" />
-    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.11 图指针准确定位" />
+    <MESSAGE value="data_struct update 2021.09.11 开放REST api" />
+    <MESSAGE value="data_struct update 2021.09.11 19:15.pm 开放REST api" />
+    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.11 19:15.pm 开放REST api" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
