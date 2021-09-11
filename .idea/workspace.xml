@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.10">
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="algo_base add . 2021.09.11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +159,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="algo_base add . 2021.09.09" />
     <MESSAGE value="algo_base add . 2021.09.10" />
-    <option name="LAST_COMMIT_MESSAGE" value="algo_base add . 2021.09.10" />
+    <MESSAGE value="algo_base add . 2021.09.11" />
+    <option name="LAST_COMMIT_MESSAGE" value="algo_base add . 2021.09.11" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -178,21 +169,5 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go</url>
-          <line>78</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go</url>
-          <line>43</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
