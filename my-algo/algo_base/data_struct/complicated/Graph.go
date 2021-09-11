@@ -26,8 +26,6 @@ type AdjGraph struct {
 	IsUnidirectional bool
 }
 
-var seqGraph []interface{}
-
 func (graph *AdjGraph) Construct(isUnidirectional bool) {
 	graph.Nodes = make([]*GraphNode, 0)
 	graph.Edges = make([]*GraphEdge, 0)

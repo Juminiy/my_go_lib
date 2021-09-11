@@ -3,7 +3,7 @@ package algo_basic
 // 算法经过 https://luogu.com.cn/problem/P1177 测试，保证正确性
 
 const (
-	maxBit        = 30
+	maxBit        = 31
 	maxArrLen     = 1e6
 	notFoundIndex = -1
 )
@@ -35,6 +35,7 @@ type MySort struct {
 }
 
 var tArr []int = make([]int, maxArrLen, maxArrLen)
+var tStorage [][]int = make([][]int, maxBit, maxArrLen)
 
 func (mySort *MySort) myComp(compValue, compedValue int) bool {
 	if mySort.IsAsc {
@@ -69,17 +70,24 @@ func (mySort *MySort) MyQuickSort(arr []int, l, r int) {
 	}
 }
 
-func (mySort *MySort) MyMergeSort(arr []int, l, r int) {
+var tLevels = 0
+
+func (mySort *MySort) div(arr []int, l, r int) {
 	if l >= r {
 		return
 	}
 	mid := (r-l)/2 + l
-	mySort.MyMergeSort(arr, l, mid)
-	mySort.MyMergeSort(arr, mid+1, r)
-
+	mySort.div(arr, l, mid)
+	mySort.div(arr, mid+1, r)
+	mySort.merge(arr, l, r)
+	tStorage[tLevels] = tArr[:r+1]
+	tLevels++
+}
+func (MySort *MySort) merge(arr []int, l, r int) {
+	mid := (r-l)/2 + l
 	l1, r1, l2, r2, ll := l, mid, mid+1, r, l
 	for ; l1 <= r1 && l2 <= r2; ll++ {
-		if arr[l1] < arr[l2] {
+		if MySort.myComp(arr[l1], arr[l2]) {
 			tArr[ll] = arr[l1]
 			l1++
 		} else {
@@ -99,6 +107,10 @@ func (mySort *MySort) MyMergeSort(arr []int, l, r int) {
 	for ll = l; ll <= r; ll++ {
 		arr[ll] = tArr[ll]
 	}
+}
+func (mySort *MySort) MyMergeSort(arr []int, l, r int) [][]int {
+	mySort.div(arr, l, r)
+	return tStorage[:tLevels]
 }
 
 // BinarySearch must be sorted Arr else Meaningless
