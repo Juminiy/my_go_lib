@@ -159,7 +159,7 @@ func (graph *AdjGraph) WalkFromNodeIndex(nodeIndex int, edgeValue interface{}) *
 	mySet := &MySet{}
 	mySet.Construct()
 	for _, edge := range graph.Edges {
-		if edge.i == nodeIndex && edge.Value == edgeValue {
+		if edge.i == nodeIndex && edge.Value.(string) == edgeValue.(string) {
 			mySet.Insert(edge.j)
 		}
 	}
@@ -171,20 +171,24 @@ func (graph *AdjGraph) WalkFromNodeIndexOnlyEpsilon(nodeIndex int) *MySet {
 	if nodeIndex == nodeNotExist {
 		return nil
 	}
-	mySet := &MySet{}
+	mySet, visNodes := &MySet{}, &MySet{}
+	visNodes.Construct()
 	mySet.Construct()
 	myQueue := &simple.MyQueue{}
 	myQueue.Push(nodeIndex)
 	for !myQueue.IsEmpty() {
 		nodeIndex, _ := myQueue.Front()
+		visNodes.Insert(nodeIndex)
 		myQueue.Pop()
 		for _, edge := range graph.Edges {
-			if edge.Value == EdgeEpsilon && edge.i == nodeIndex {
-				mySet.Insert(nodeIndex)
-				myQueue.Push(nodeIndex)
+			if edge.Value == EdgeEpsilon && edge.i == nodeIndex && !visNodes.Exist(edge.j) {
+				mySet.Insert(edge.j)
+				myQueue.Push(edge.j)
+				fmt.Printf("%d ", nodeIndex)
 			}
 		}
 	}
+	// fmt.Println(mySet)
 	return mySet
 }
 

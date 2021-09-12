@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.12 pre update">
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_compile/struc/inputStruc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/statistic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/statistic.xml" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.12 解决图论死循环">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/DFA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/FA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/ISet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/ISet_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/graph_fa.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api_context/Context.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/router/algo_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router/algo_api.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/service/algo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/service/algo_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +192,8 @@
     <MESSAGE value="data_struct update 2021.09.12 修正图论算法" />
     <MESSAGE value="data_struct update 2021.09.12 16:40 完成epsilonClosure和子集构建" />
     <MESSAGE value="2021.09.12 pre update" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.09.12 pre update" />
+    <MESSAGE value="2021.09.12 解决图论死循环" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.09.12 解决图论死循环" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -219,7 +208,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go</url>
-          <line>27</line>
+          <line>28</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">

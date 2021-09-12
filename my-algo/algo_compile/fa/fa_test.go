@@ -22,6 +22,7 @@ func TestEpsilonClosure(t *testing.T) {
 	adj.AddEdge(&complicated.GraphNode{Value: 7}, &complicated.GraphNode{Value: 8}, &complicated.GraphEdge{Value: "a"})
 	adj.AddEdge(&complicated.GraphNode{Value: 8}, &complicated.GraphNode{Value: 9}, &complicated.GraphEdge{Value: "b"})
 	adj.AddEdge(&complicated.GraphNode{Value: 9}, &complicated.GraphNode{Value: 10}, &complicated.GraphEdge{Value: "b"})
+	// fmt.Println(adj.Nodes)
 	tSet := &ISet{}
 	tSet.Construct()
 	tSet.CharSet.Insert(0)

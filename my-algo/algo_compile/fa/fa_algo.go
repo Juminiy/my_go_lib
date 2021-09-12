@@ -41,6 +41,7 @@ func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 			}
 		}
 	}
+	// fmt.Println(iSet)
 	return iSet
 }
 
