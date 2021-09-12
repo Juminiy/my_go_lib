@@ -1,5 +1,10 @@
 package algo_basic
 
+import (
+	"math"
+	"strconv"
+)
+
 // 算法经过 https://luogu.com.cn/problem/P1177 测试，保证正确性
 
 const (
@@ -20,6 +25,30 @@ func MinValue(compValue, compedValue int) int {
 		return compValue
 	} else {
 		return compedValue
+	}
+}
+
+func StrToInt(str string) int {
+	if strInt, err := strconv.Atoi(str); err == nil {
+		return strInt
+	}
+	return math.MaxInt64
+}
+func IntToStr(intValue int) string {
+	return strconv.Itoa(intValue)
+}
+func IntToChar(intNum int) rune {
+	if intNum <= 9 {
+		return rune(intNum + 48)
+	} else {
+		panic("intValue must <= 9! ")
+	}
+}
+func CharToInt(char rune) int {
+	if char <= 57 {
+		return int(char - 48)
+	} else {
+		panic("char must range 49~57! ")
 	}
 }
 func MyAbs(value int) int {

@@ -89,3 +89,34 @@ func TestBfsGraph(t *testing.T) {
 	//fmt.Println(&adj)
 	adj.PrintNodes(adj.BfsGraph())
 }
+
+func TestUnite(t *testing.T) {
+	s1, s2 := &complicated.MySet{}, &complicated.MySet{}
+	s1.Construct()
+	s2.Construct()
+	s1.Insert("121")
+	s1.Insert('2')
+	s1.Insert('3')
+	s2.Insert("121")
+	s2.Insert('3')
+	s2.Insert('4')
+	fmt.Println("交", s1.Union(s2))
+	fmt.Println("并", s1.Unite(s2))
+	fmt.Println("差", s1.Diff(s2))
+}
+
+type testStruct struct {
+	Age  int
+	Name string
+}
+
+func TestUnion(t *testing.T) {
+	s1, s2 := &complicated.MySet{}, &complicated.MySet{}
+	s1.Construct()
+	s2.Construct()
+	s1.Insert(testStruct{18, "Kami"})
+	s1.Insert(testStruct{16, "Rilo"})
+	s2.Insert(testStruct{18, "Ops"})
+	s2.Insert(testStruct{18, "Kami"})
+	fmt.Println(s1.Union(s2))
+}

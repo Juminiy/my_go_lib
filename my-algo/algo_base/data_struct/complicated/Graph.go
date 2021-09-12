@@ -3,6 +3,7 @@ package complicated
 import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
+	"reflect"
 )
 
 const (
@@ -11,14 +12,23 @@ const (
 	defaultZero      = 0
 	defaultLen       = 1 << 5
 	defaultCap       = 1 << maxBin
+
+	nodeNotExist = 0
+	edgeNotExist = 0
 )
+
+var curNode, curEdge = nodeNotExist, edgeNotExist
 
 type GraphNode struct {
 	Value interface{}
+	I     int
 }
 type GraphEdge struct {
-	Value interface{}
+	Value   interface{}
+	I, J, K int
 }
+
+// AdjGraph 如何记录一个点到另一个点的边value
 type AdjGraph struct {
 	Nodes            []*GraphNode
 	Adjacent         map[GraphNode][]*GraphNode
@@ -33,16 +43,65 @@ func (graph *AdjGraph) Construct(isUnidirectional bool) {
 	graph.Adjacent = make(map[GraphNode][]*GraphNode, 0)
 }
 func (graph *AdjGraph) AddNode(node *GraphNode) {
+	curNode, node.I = curNode+1, curNode
 	graph.Nodes = append(graph.Nodes, node)
 }
 
 func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
-
+	i, j, k := graph.ExistNodeValue(nodeI), graph.ExistNodeValue(nodeJ), graph.DeepExistEdge(nodeI, nodeJ, edge)
+	if k != edgeNotExist {
+		return
+	}
+	if i == nodeNotExist {
+		graph.AddNode(nodeI)
+		i = curNode
+	}
+	if j == nodeNotExist {
+		graph.AddNode(nodeJ)
+		j = curNode
+	}
 	graph.Adjacent[*nodeI] = append(graph.Adjacent[*nodeI], nodeJ)
+	curEdge++
 	if !graph.IsUnidirectional {
 		graph.Adjacent[*nodeJ] = append(graph.Adjacent[*nodeJ], nodeI)
+		curEdge++
 	}
+	edge.I, edge.J, edge.K = i, j, k
 	graph.Edges = append(graph.Edges, edge)
+}
+
+func (graph *AdjGraph) ExistNodeValue(cNode *GraphNode) int {
+	for _, node := range graph.Nodes {
+		if reflect.DeepEqual(node.Value, cNode.Value) {
+			return node.I
+		}
+	}
+	return nodeNotExist
+}
+func (graph *AdjGraph) ExistEdgeValue(cEdge *GraphEdge) (int, int) {
+	for _, edge := range graph.Edges {
+		if reflect.DeepEqual(edge.Value, cEdge.Value) {
+			return edge.I, edge.J
+		}
+	}
+	return edgeNotExist, edgeNotExist
+}
+func (graph *AdjGraph) DeepExistEdge(nodeI, nodeJ *GraphNode, cEdge *GraphEdge) int {
+	i, j := graph.ExistEdgeValue(cEdge)
+	if graph.ExistNodeValue(nodeI) != nodeNotExist &&
+		graph.ExistNodeValue(nodeJ) != nodeNotExist &&
+		i != edgeNotExist && j != edgeNotExist {
+		for _, node := range graph.Adjacent[*nodeI] {
+			if reflect.DeepEqual(node.Value, nodeJ.Value) {
+				return edgeNotExist
+			}
+		}
+		return edgeNotExist
+	}
+	return edgeNotExist
+}
+func (graph *AdjGraph) Amount() (int, int) {
+	return curNode, curEdge
 }
 func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 	// tAddress = tAddress.(*GraphNode)
