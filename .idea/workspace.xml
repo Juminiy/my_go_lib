@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.11 19:15.pm 开放REST api">
-      <change afterPath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/ISet_test.go" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.12 图论增加属性,扩展性加强;正则转DFA,函数EpsilonClosure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/DFA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/FA.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/graph_fa/graph_fa.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/graph_fa.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/set_fa/ISet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/ISet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/leetcode-cn/0910_1894.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/0910_1894.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/leetcode-cn/problem_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/leetcode-cn/problem_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,14 +77,17 @@
       <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_base\data_struct\complicated" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestUnion in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct">
-    <configuration name="go build github.com/Juminiy/my_go_lib" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.Test_checkValidString in github.com/Juminiy/my_go_lib/my-algo/leetcode-cn">
+    <configuration name="TestGraphPlus in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
+      <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGraphPlus\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestMyAbs in github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -103,18 +100,6 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestMyAbs\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestMySort_MyQuickSort in github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/algo_basic" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestMySort_MyQuickSort\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestUnion in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -141,13 +126,25 @@
       <pattern value="^\QTestUnite\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="Test_checkValidString in github.com/Juminiy/my_go_lib/my-algo/leetcode-cn" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="my_go_lib" />
+      <working_directory value="$PROJECT_DIR$/my-algo/leetcode-cn" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo/leetcode-cn" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest_checkValidString\E$" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.Test_checkValidString in github.com/Juminiy/my_go_lib/my-algo/leetcode-cn" />
+        <item itemvalue="Go Test.TestGraphPlus in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestUnion in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestUnite in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestMyAbs in github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic" />
-        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
-        <item itemvalue="Go Test.TestMySort_MyQuickSort in github.com/Juminiy/my_go_lib/my-algo/algo_base/algo_basic" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +173,8 @@
     <MESSAGE value="data_struct update 2021.09.11 图指针准确定位" />
     <MESSAGE value="data_struct update 2021.09.11 开放REST api" />
     <MESSAGE value="data_struct update 2021.09.11 19:15.pm 开放REST api" />
-    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.11 19:15.pm 开放REST api" />
+    <MESSAGE value="data_struct update 2021.09.12 图论增加属性,扩展性加强;正则转DFA,函数EpsilonClosure" />
+    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.12 图论增加属性,扩展性加强;正则转DFA,函数EpsilonClosure" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -191,8 +189,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go</url>
-          <line>89</line>
-          <option name="timeStamp" value="14" />
+          <line>118</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go</url>
+          <line>68</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

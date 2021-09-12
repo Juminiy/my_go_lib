@@ -61,10 +61,8 @@ func TestNonRecursionDfs(t *testing.T) {
 	fmt.Println(simple.NonRecursionDfs(root))
 }
 
-func TestBfsGraph(t *testing.T) {
-	adj := &complicated.AdjGraph{}
-	adj.Construct(true)
-	nodea, nodeb, nodec, noded, nodee := &complicated.GraphNode{Value: "A"}, &complicated.GraphNode{Value: "B"}, &complicated.GraphNode{Value: "C"}, &complicated.GraphNode{Value: "D"}, &complicated.GraphNode{Value: "E"}
+/** Test Data
+ *nodea, nodeb, nodec, noded, nodee := &complicated.GraphNode{Value: "A"}, &complicated.GraphNode{Value: "B"}, &complicated.GraphNode{Value: "C"}, &complicated.GraphNode{Value: "D"}, &complicated.GraphNode{Value: "E"}
 	adj.AddNode(nodea)
 	adj.AddNode(nodeb)
 	adj.AddNode(nodec)
@@ -87,6 +85,10 @@ func TestBfsGraph(t *testing.T) {
 	//fmt.Println("nodea",&nodea);fmt.Println("nodeb",&nodeb);fmt.Println("nodec",&nodec);fmt.Println("noded",&noded);fmt.Println("nodee",&nodee)
 	//fmt.Println(adj.Adjacent)
 	//fmt.Println(&adj)
+*/
+func TestBfsGraph(t *testing.T) {
+	adj := &complicated.AdjGraph{}
+	adj.Construct(true)
 	adj.PrintNodes(adj.BfsGraph())
 }
 
@@ -119,4 +121,23 @@ func TestUnion(t *testing.T) {
 	s2.Insert(testStruct{18, "Ops"})
 	s2.Insert(testStruct{18, "Kami"})
 	fmt.Println(s1.Union(s2))
+}
+
+/*
+ * adj.AddNode(&complicated.GraphNode{Value: "1"})
+	adj.AddNode(&complicated.GraphNode{Value: "2"})
+	adj.AddNode(&complicated.GraphNode{Value: "3"})
+	adj.AddNode(&complicated.GraphNode{Value: "4"})
+	adj.AddNode(&complicated.GraphNode{Value: "5"})
+*/
+func TestGraphPlus(t *testing.T) {
+	adj := &complicated.AdjGraph{}
+	adj.Construct(true)
+	edge12 := &complicated.GraphEdge{Value: "1"}
+	adj.AddEdge(&complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "2"}, edge12)
+	edge12.AssignIJ(1, 2)
+	adj.AddEdge(&complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "2"}, &complicated.GraphEdge{Value: "1"})
+	fmt.Println(adj.Nodes)
+	fmt.Println(adj.Edges)
+	adj.PrintNodes(adj.DfsGraph())
 }

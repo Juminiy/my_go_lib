@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
 	"reflect"
+	"strconv"
 )
 
 const (
@@ -15,17 +16,35 @@ const (
 
 	nodeNotExist = 0
 	edgeNotExist = 0
+	EdgeEpsilon  = "epsilon"
 )
 
 var curNode, curEdge = nodeNotExist, edgeNotExist
 
+// GraphNode Value&&i
 type GraphNode struct {
 	Value interface{}
-	I     int
+	i     int
 }
+
+func (node *GraphNode) AssignI(_i int) {
+	node.i = _i
+}
+func (node *GraphNode) String() string {
+	return "Node[" + strconv.Itoa(node.i) + "]=" + node.Value.(string)
+}
+
+// GraphEdge Value&&i&&j&&k
 type GraphEdge struct {
 	Value   interface{}
-	I, J, K int
+	i, j, k int
+}
+
+func (edge *GraphEdge) AssignIJ(_i, _j int) {
+	edge.i, edge.j = _i, _j
+}
+func (edge *GraphEdge) String() string {
+	return "Edge[" + strconv.Itoa(edge.k) + "](" + strconv.Itoa(edge.i) + " to " + strconv.Itoa(edge.j) + ")=" + edge.Value.(string)
 }
 
 // AdjGraph 如何记录一个点到另一个点的边value
@@ -42,14 +61,33 @@ func (graph *AdjGraph) Construct(isUnidirectional bool) {
 	graph.IsUnidirectional = isUnidirectional
 	graph.Adjacent = make(map[GraphNode][]*GraphNode, 0)
 }
+
+// AddNode i
 func (graph *AdjGraph) AddNode(node *GraphNode) {
-	curNode, node.I = curNode+1, curNode
+	if node == nil {
+		return
+	}
+	i := graph.ExistNodeValue(node)
+	if i != nodeNotExist {
+		return
+	}
+	curNode++
+	node.i = curNode
 	graph.Nodes = append(graph.Nodes, node)
 }
 
+// AddEdge (i-k>j)
 func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
-	i, j, k := graph.ExistNodeValue(nodeI), graph.ExistNodeValue(nodeJ), graph.DeepExistEdge(nodeI, nodeJ, edge)
-	if k != edgeNotExist {
+	if edge == nil {
+		return
+	}
+	i, j := graph.ExistNodeValue(nodeI), graph.ExistNodeValue(nodeJ)
+	ei, ej, ek := graph.ExistEdge(edge)
+	if ek != edgeNotExist {
+		return
+	}
+	if i != nodeNotExist && j != nodeNotExist && ei == i && ej == j {
+		graph.Edges[ek].Value = edge.Value
 		return
 	}
 	if i == nodeNotExist {
@@ -66,39 +104,34 @@ func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
 		graph.Adjacent[*nodeJ] = append(graph.Adjacent[*nodeJ], nodeI)
 		curEdge++
 	}
-	edge.I, edge.J, edge.K = i, j, k
+	edge.i, edge.j, edge.k = i, j, curEdge
 	graph.Edges = append(graph.Edges, edge)
 }
 
+// ExistNodeValue 存在相同值的节点
 func (graph *AdjGraph) ExistNodeValue(cNode *GraphNode) int {
-	for _, node := range graph.Nodes {
-		if reflect.DeepEqual(node.Value, cNode.Value) {
-			return node.I
+	if cNode != nil {
+		for _, node := range graph.Nodes {
+			if reflect.DeepEqual(node.Value, cNode.Value) {
+				return node.i
+			}
 		}
 	}
 	return nodeNotExist
 }
-func (graph *AdjGraph) ExistEdgeValue(cEdge *GraphEdge) (int, int) {
-	for _, edge := range graph.Edges {
-		if reflect.DeepEqual(edge.Value, cEdge.Value) {
-			return edge.I, edge.J
-		}
-	}
-	return edgeNotExist, edgeNotExist
-}
-func (graph *AdjGraph) DeepExistEdge(nodeI, nodeJ *GraphNode, cEdge *GraphEdge) int {
-	i, j := graph.ExistEdgeValue(cEdge)
-	if graph.ExistNodeValue(nodeI) != nodeNotExist &&
-		graph.ExistNodeValue(nodeJ) != nodeNotExist &&
-		i != edgeNotExist && j != edgeNotExist {
-		for _, node := range graph.Adjacent[*nodeI] {
-			if reflect.DeepEqual(node.Value, nodeJ.Value) {
-				return edgeNotExist
+
+// ExistEdge 存在相同的边
+func (graph *AdjGraph) ExistEdge(cEdge *GraphEdge) (int, int, int) {
+	if cEdge != nil {
+		for _, edge := range graph.Edges {
+			if reflect.DeepEqual(edge.Value, cEdge.Value) &&
+				edge.i == cEdge.i &&
+				edge.j == cEdge.j {
+				return edge.i, edge.j, edge.k
 			}
 		}
-		return edgeNotExist
 	}
-	return edgeNotExist
+	return nodeNotExist, nodeNotExist, edgeNotExist
 }
 func (graph *AdjGraph) Amount() (int, int) {
 	return curNode, curEdge
@@ -111,7 +144,6 @@ func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 }
 
 func (graph *AdjGraph) BfsGraph() []interface{} {
-	// fmt.Println(&graph);fmt.Println("---------------------")
 	if graph == nil || graph.Nodes == nil || len(graph.Nodes) == 0 {
 		return nil
 	}
@@ -128,9 +160,6 @@ func (graph *AdjGraph) BfsGraph() []interface{} {
 				visNode.Insert(curNode)
 			}
 			q.Pop()
-			// fmt.Println(tNode)
-			// adjNode := graph.Adjacent[*tNode]
-			// fmt.Println(adjNode)
 			for _, adjNode := range graph.Adjacent[*curNode] {
 				if !visNode.Exist(adjNode) {
 					q.Push(adjNode)
@@ -182,6 +211,5 @@ func (graph *AdjGraph) DfsGraph() []interface{} {
 			}
 		}
 	}
-
 	return seqNodes
 }
