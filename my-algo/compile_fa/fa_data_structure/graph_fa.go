@@ -36,8 +36,15 @@ func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 
 // EpsilonClosure 集合I的所有状态经若干次空边到达的状态 并上 集合I
 func EpsilonClosure(faGraph *ds.AdjGraph, I *ISet) *ISet {
-
-	return nil
+	if I == nil || I.CharSet.Len() == 0 {
+		return nil
+	}
+	mySet := &ISet{}
+	for _, state := range I.CharSet.ImmutableMap {
+		nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
+		mySet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+	}
+	return &ISet{mySet.CharSet.Unite(I.CharSet)}
 }
 
 // GenerateSubSets C is union of all subsets

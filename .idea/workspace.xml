@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.12 修正图论算法">
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="data_struct update 2021.09.12 16:40 完成epsilonClosure和子集构建">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/graph_fa.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure/graph_fa.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +63,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -193,7 +191,8 @@
     <MESSAGE value="data_struct update 2021.09.11 19:15.pm 开放REST api" />
     <MESSAGE value="data_struct update 2021.09.12 图论增加属性,扩展性加强;正则转DFA,函数EpsilonClosure" />
     <MESSAGE value="data_struct update 2021.09.12 修正图论算法" />
-    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.12 修正图论算法" />
+    <MESSAGE value="data_struct update 2021.09.12 16:40 完成epsilonClosure和子集构建" />
+    <option name="LAST_COMMIT_MESSAGE" value="data_struct update 2021.09.12 16:40 完成epsilonClosure和子集构建" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -202,16 +201,5 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go</url>
-          <line>119</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
