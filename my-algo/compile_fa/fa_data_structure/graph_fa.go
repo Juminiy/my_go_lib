@@ -21,12 +21,13 @@ const (
 // Move 集合I的所有状态经过一次a边到达的状态
 func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 	iSet := &ISet{}
-	i, j := faGraph.ExistEdgeValue(&ds.GraphEdge{Value: a})
-	if i != nonNode && j != nonNode {
-		for state, _ := range I.CharSet.ImmutableMap {
-			tNode := &ds.GraphNode{Value: state}
-			if faGraph.ExistNodeValue(tNode) != nonNode {
-				// faGraph.Adjacent[tNode]
+	if faGraph.ExistEdgeValue(&ds.GraphEdge{Value: a}) {
+		for _, state := range I.CharSet.ImmutableMap {
+			nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
+			if a == epsilon {
+				iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+			} else {
+				iSet.CharSet.Unite(faGraph.WalkFromNodeIndex(nodeIndex, a))
 			}
 		}
 	}

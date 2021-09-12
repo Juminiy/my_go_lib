@@ -17,6 +17,7 @@ const (
 	nodeNotExist = 0
 	edgeNotExist = 0
 	EdgeEpsilon  = "epsilon"
+	EdgeBlank    = "epsilon"
 )
 
 var curNode, curEdge = nodeNotExist, edgeNotExist
@@ -119,6 +120,16 @@ func (graph *AdjGraph) ExistNodeValue(cNode *GraphNode) int {
 	}
 	return nodeNotExist
 }
+func (graph *AdjGraph) ExistEdgeValue(cEdge *GraphEdge) bool {
+	if cEdge != nil {
+		for _, edge := range graph.Edges {
+			if reflect.DeepEqual(edge.Value, cEdge.Value) {
+				return true
+			}
+		}
+	}
+	return false
+}
 
 // ExistEdge 存在相同的边
 func (graph *AdjGraph) ExistEdge(cEdge *GraphEdge) (int, int, int) {
@@ -141,6 +152,40 @@ func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 	for i, value := range tAddress {
 		fmt.Printf("Location[%d]'s address is[%p],value is[%v]\n", i, &value, value)
 	}
+}
+
+func (graph *AdjGraph) WalkFromNodeIndex(nodeIndex int, edgeValue interface{}) *MySet {
+	if nodeIndex == nodeNotExist || edgeValue == nil {
+		return nil
+	}
+	mySet := &MySet{}
+	mySet.Construct()
+	for _, edge := range graph.Edges {
+		if edge.i == nodeIndex && edge.Value == edgeValue {
+			mySet.Insert(edge.j)
+		}
+	}
+	return mySet
+}
+func (graph *AdjGraph) WalkFromNodeIndexOnlyEpsilon(nodeIndex int) *MySet {
+	if nodeIndex == nodeNotExist {
+		return nil
+	}
+	mySet := &MySet{}
+	mySet.Construct()
+	myQueue := &simple.MyQueue{}
+	myQueue.Push(nodeIndex)
+	for !myQueue.IsEmpty() {
+		nodeIndex, _ := myQueue.Front()
+		myQueue.Pop()
+		for _, edge := range graph.Edges {
+			if edge.Value == EdgeEpsilon && edge.i == nodeIndex {
+				mySet.Insert(nodeIndex)
+				myQueue.Push(nodeIndex)
+			}
+		}
+	}
+	return mySet
 }
 
 func (graph *AdjGraph) BfsGraph() []interface{} {

@@ -134,10 +134,11 @@ func TestGraphPlus(t *testing.T) {
 	adj := &complicated.AdjGraph{}
 	adj.Construct(true)
 	edge12 := &complicated.GraphEdge{Value: "1"}
+	node1, node2 := &complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "1"}
 	adj.AddEdge(&complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "2"}, edge12)
-	edge12.AssignIJ(1, 2)
-	adj.AddEdge(&complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "2"}, &complicated.GraphEdge{Value: "1"})
+	adj.AddEdge(&complicated.GraphNode{Value: "1"}, &complicated.GraphNode{Value: "2"}, edge12)
 	fmt.Println(adj.Nodes)
 	fmt.Println(adj.Edges)
 	adj.PrintNodes(adj.DfsGraph())
+	fmt.Printf("%p,%p", node1, node2) // 值桶 指针不同
 }
