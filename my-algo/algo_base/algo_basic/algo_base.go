@@ -112,11 +112,11 @@ func (mySort *MySort) div(arr []int, l, r int) {
 	tStorage[tLevels] = tArr[:r+1]
 	tLevels++
 }
-func (MySort *MySort) merge(arr []int, l, r int) {
+func (mySort *MySort) merge(arr []int, l, r int) {
 	mid := (r-l)/2 + l
 	l1, r1, l2, r2, ll := l, mid, mid+1, r, l
 	for ; l1 <= r1 && l2 <= r2; ll++ {
-		if MySort.myComp(arr[l1], arr[l2]) {
+		if mySort.myComp(arr[l1], arr[l2]) {
 			tArr[ll] = arr[l1]
 			l1++
 		} else {

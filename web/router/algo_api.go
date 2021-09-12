@@ -24,6 +24,7 @@ func ApiBase(app *fiber.App) {
 	algoBase.Get("/intMin/:compValue/:compedValue", api_context.IntMinContext)
 	algoBase.Post("/intQuickSort", api_context.QuickSortContext)
 	algoBase.Post("/intMergeSort", api_context.MergeSortContext)
+	algoBase.Post("/epsilonClosure", api_context.EpsilonClosureContext)
 	// 404 Handler
 	app.Use(api_context.NotFoundContext)
 }

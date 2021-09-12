@@ -36,6 +36,13 @@ func (set *MySet) String() string {
 	setStr += "]"
 	return setStr
 }
+func (set *MySet) Slice() []interface{} {
+	eleArr := make([]interface{}, 0)
+	for _, ele := range set.ImmutableMap {
+		eleArr = append(eleArr, ele)
+	}
+	return eleArr
+}
 
 // Union 交集
 func (set *MySet) Union(cSet *MySet) *MySet {

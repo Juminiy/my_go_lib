@@ -1,6 +1,7 @@
 package api_context
 
 import (
+	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
 	"github.com/Juminiy/my_go_lib/web/model"
 	"github.com/Juminiy/my_go_lib/web/service"
 	"github.com/Juminiy/my_go_lib/web/utils"
@@ -42,4 +43,11 @@ func MergeSortContext(ctx *fiber.Ctx) error {
 		return nil
 	}
 	return ctx.JSON(format.Ok(service.IntMergeSortService(arr.TArr)))
+}
+func EpsilonClosureContext(ctx *fiber.Ctx) error {
+	inputArr := make([]struc.EdgeInput, 0)
+	if err := ctx.BodyParser(inputArr); err != nil {
+		return nil
+	}
+	return ctx.JSON(format.Ok(service.EpsilonClosureService(inputArr)))
 }

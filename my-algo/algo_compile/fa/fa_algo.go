@@ -1,8 +1,8 @@
-package fa_data_structure
+package fa
 
 import (
 	ds "github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
-	fa "github.com/Juminiy/my_go_lib/my-algo/compile_fa"
+	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
 )
 
 const (
@@ -18,11 +18,21 @@ const (
  * function run depends on the graph
  */
 
+func ConstructGraph(inputArr []struc.EdgeInput) *ds.AdjGraph {
+	adj := &ds.AdjGraph{}
+	adj.Construct(true)
+	for _, edge := range inputArr {
+		adj.AddEdge(&ds.GraphNode{Value: edge.NodeIValue}, &ds.GraphNode{Value: edge.NodeJValue}, &ds.GraphEdge{Value: edge.EdgeValue})
+	}
+	return adj
+}
+
 // Move 集合I的所有状态经过一次a边到达的状态
 func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 	iSet := &ISet{}
+	iSet.Construct()
 	if faGraph.ExistEdgeValue(&ds.GraphEdge{Value: a}) {
-		for _, state := range I.CharSet.ImmutableMap {
+		for state, _ := range I.CharSet.ImmutableMap { //key value写反了
 			nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
 			if a == epsilon {
 				iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
@@ -39,12 +49,13 @@ func EpsilonClosure(faGraph *ds.AdjGraph, I *ISet) *ISet {
 	if I == nil || I.CharSet.Len() == 0 {
 		return nil
 	}
-	mySet := &ISet{}
+	iSet := &ISet{}
+	iSet.Construct()
 	for _, state := range I.CharSet.ImmutableMap {
 		nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
-		mySet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+		iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
 	}
-	return &ISet{mySet.CharSet.Unite(I.CharSet)}
+	return &ISet{iSet.CharSet.Unite(I.CharSet)}
 }
 
 // GenerateSubSets C is union of all subsets
@@ -53,6 +64,7 @@ func GenerateSubSets(faGraph *ds.AdjGraph) *ISet {
 	C.Construct()
 	return nil
 }
+
 func RegexToGraph(regex string) *ds.AdjGraph {
 	if len(regex) == 0 {
 		return nil
@@ -86,12 +98,4 @@ func RegexToGraph(regex string) *ds.AdjGraph {
 		}
 	}
 	return adj
-}
-
-func GraphToNFA(graph *ds.AdjGraph) *fa.NFA {
-	return nil
-}
-
-func NFAToDFA(nfa *fa.NFA) *fa.DFA {
-	return nil
 }

@@ -32,7 +32,7 @@ func (node *GraphNode) AssignI(_i int) {
 	node.i = _i
 }
 func (node *GraphNode) String() string {
-	return "Node[" + strconv.Itoa(node.i) + "]=" + node.Value.(string)
+	return "Node[" + strconv.Itoa(node.i) + "]=" + fmt.Sprintf("%v", node.Value)
 }
 
 // GraphEdge Value&&i&&j&&k
@@ -45,7 +45,7 @@ func (edge *GraphEdge) AssignIJ(_i, _j int) {
 	edge.i, edge.j = _i, _j
 }
 func (edge *GraphEdge) String() string {
-	return "Edge[" + strconv.Itoa(edge.k) + "](" + strconv.Itoa(edge.i) + " to " + strconv.Itoa(edge.j) + ")=" + edge.Value.(string)
+	return "Edge[" + strconv.Itoa(edge.k) + "](" + strconv.Itoa(edge.i) + " to " + strconv.Itoa(edge.j) + ")=" + fmt.Sprintf("%v", edge.Value)
 }
 
 // AdjGraph 如何记录一个点到另一个点的边value
@@ -77,18 +77,15 @@ func (graph *AdjGraph) AddNode(node *GraphNode) {
 	graph.Nodes = append(graph.Nodes, node)
 }
 
-// AddEdge (i-k>j)
+// AddEdge (i--k-->j)
 func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
 	if edge == nil {
 		return
 	}
 	i, j := graph.ExistNodeValue(nodeI), graph.ExistNodeValue(nodeJ)
-	ei, ej, ek := graph.ExistEdge(edge)
-	if ek != edgeNotExist {
-		return
-	}
-	if i != nodeNotExist && j != nodeNotExist && ei == i && ej == j {
-		graph.Edges[ek].Value = edge.Value
+	_, _, ek := graph.ExistEdge(i, j, edge)
+	if i != nodeNotExist && j != nodeNotExist && ek != edgeNotExist {
+		graph.Edges[ek-1].Value = edge.Value
 		return
 	}
 	if i == nodeNotExist {
@@ -132,12 +129,13 @@ func (graph *AdjGraph) ExistEdgeValue(cEdge *GraphEdge) bool {
 }
 
 // ExistEdge 存在相同的边
-func (graph *AdjGraph) ExistEdge(cEdge *GraphEdge) (int, int, int) {
+// 边的i,j传不进来 导致无法调用ei,ej,ek
+func (graph *AdjGraph) ExistEdge(i, j int, cEdge *GraphEdge) (int, int, int) {
 	if cEdge != nil {
 		for _, edge := range graph.Edges {
 			if reflect.DeepEqual(edge.Value, cEdge.Value) &&
-				edge.i == cEdge.i &&
-				edge.j == cEdge.j {
+				edge.i == i &&
+				edge.j == j {
 				return edge.i, edge.j, edge.k
 			}
 		}
@@ -167,6 +165,8 @@ func (graph *AdjGraph) WalkFromNodeIndex(nodeIndex int, edgeValue interface{}) *
 	}
 	return mySet
 }
+
+// WalkFromNodeIndexOnlyEpsilon 死循环
 func (graph *AdjGraph) WalkFromNodeIndexOnlyEpsilon(nodeIndex int) *MySet {
 	if nodeIndex == nodeNotExist {
 		return nil

@@ -140,5 +140,5 @@ func TestGraphPlus(t *testing.T) {
 	fmt.Println(adj.Nodes)
 	fmt.Println(adj.Edges)
 	adj.PrintNodes(adj.DfsGraph())
-	fmt.Printf("%p,%p", node1, node2) // 值桶 指针不同
+	fmt.Printf("%p,%p", node1, node2) // 值同 指针不同
 }
