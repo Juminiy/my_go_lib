@@ -12,6 +12,14 @@ func (iset *ISet) Construct() {
 	iset.CharSet = mySet
 }
 
+func (iset *ISet) String() string {
+	if iset == nil {
+		return "nil"
+	} else {
+		return iset.CharSet.String()
+	}
+}
+
 type DFATable struct {
 	State       *ISet
 	Input       *ISet

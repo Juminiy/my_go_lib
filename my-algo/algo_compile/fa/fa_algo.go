@@ -35,9 +35,9 @@ func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 		for state, _ := range I.CharSet.ImmutableMap { //key value写反了
 			nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
 			if a == epsilon {
-				iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
 			} else {
-				iSet.CharSet.Unite(faGraph.WalkFromNodeIndex(nodeIndex, a))
+				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIndex(nodeIndex, a))
 			}
 		}
 	}

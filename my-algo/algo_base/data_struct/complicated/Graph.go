@@ -176,22 +176,32 @@ func (graph *AdjGraph) WalkFromNodeIndexOnlyEpsilon(nodeIndex int) *MySet {
 	mySet.Construct()
 	myQueue := &simple.MyQueue{}
 	myQueue.Push(nodeIndex)
+	mySet.Insert(graph.Nodes[nodeIndex])
 	for !myQueue.IsEmpty() {
 		nodeIndex, _ := myQueue.Front()
 		visNodes.Insert(nodeIndex)
 		myQueue.Pop()
 		for _, edge := range graph.Edges {
 			if edge.Value == EdgeEpsilon && edge.i == nodeIndex && !visNodes.Exist(edge.j) {
-				mySet.Insert(edge.j)
+				mySet.Insert(graph.Nodes[edge.j])
 				myQueue.Push(edge.j)
-				fmt.Printf("%d ", nodeIndex)
+				// fmt.Printf("%d ", nodeIndex)
 			}
 		}
 	}
 	// fmt.Println(mySet)
 	return mySet
 }
-
+func (graph *AdjGraph) StartWithIndexEdge(nodeIndex int, a interface{}) *MySet {
+	mySet := &MySet{}
+	mySet.Construct()
+	for _, edge := range graph.Edges {
+		if edge.i == nodeIndex && edge.Value == a {
+			mySet.Insert(edge)
+		}
+	}
+	return mySet
+}
 func (graph *AdjGraph) BfsGraph() []interface{} {
 	if graph == nil || graph.Nodes == nil || len(graph.Nodes) == 0 {
 		return nil

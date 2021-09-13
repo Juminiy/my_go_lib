@@ -28,6 +28,9 @@ func (set *MySet) Len() int {
 	return len(set.ImmutableMap)
 }
 func (set *MySet) String() string {
+	if set.Len() == 0 {
+		return "nil"
+	}
 	setStr := "["
 	for ele, _ := range set.ImmutableMap {
 		setStr += fmt.Sprintf("%v,", ele)

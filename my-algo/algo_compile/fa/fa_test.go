@@ -22,10 +22,14 @@ func TestEpsilonClosure(t *testing.T) {
 	adj.AddEdge(&complicated.GraphNode{Value: 7}, &complicated.GraphNode{Value: 8}, &complicated.GraphEdge{Value: "a"})
 	adj.AddEdge(&complicated.GraphNode{Value: 8}, &complicated.GraphNode{Value: 9}, &complicated.GraphEdge{Value: "b"})
 	adj.AddEdge(&complicated.GraphNode{Value: 9}, &complicated.GraphNode{Value: 10}, &complicated.GraphEdge{Value: "b"})
-	// fmt.Println(adj.Nodes)
+	// fmt.Println("bfs=",adj.BfsGraph())
+	fmt.Println(adj.Nodes)
 	tSet := &ISet{}
 	tSet.Construct()
 	tSet.CharSet.Insert(0)
+	// ;tSet.CharSet.Insert(1);tSet.CharSet.Insert(2);tSet.CharSet.Insert(4);tSet.CharSet.Insert(7)
 	fmt.Println(Move(adj, tSet, "epsilon"))
-
+	//fmt.Println(adj.Nodes)
+	//fmt.Println(adj.StartWithIndexEdge(1,"epsilon"))
+	// fmt.Println(adj.StartWithIndexEdge())
 }
