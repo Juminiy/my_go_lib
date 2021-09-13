@@ -35,13 +35,12 @@ func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
 		for state, _ := range I.CharSet.ImmutableMap { //key value写反了
 			nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
 			if a == epsilon {
-				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIOnlyEpsilon(nodeIndex))
 			} else {
-				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIndex(nodeIndex, a))
+				iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeI(nodeIndex, a))
 			}
 		}
 	}
-	// fmt.Println(iSet)
 	return iSet
 }
 
@@ -50,13 +49,24 @@ func EpsilonClosure(faGraph *ds.AdjGraph, I *ISet) *ISet {
 	if I == nil || I.CharSet.Len() == 0 {
 		return nil
 	}
-	iSet := &ISet{}
-	iSet.Construct()
-	for _, state := range I.CharSet.ImmutableMap {
-		nodeIndex := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
-		iSet.CharSet.Unite(faGraph.WalkFromNodeIndexOnlyEpsilon(nodeIndex))
+	iSet := &ISet{CharSet: I.CharSet}
+	for state, _ := range I.CharSet.ImmutableMap {
+		nodeI := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
+		iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIOnlyEpsilon(nodeI))
 	}
-	return &ISet{iSet.CharSet.Unite(I.CharSet)}
+	return iSet
+}
+
+func NodeSetToIntValueSet(I *ISet) *ds.MySet {
+	if I == nil {
+		return nil
+	}
+	valueSet := &ds.MySet{}
+	valueSet.Construct()
+	for value, _ := range I.CharSet.ImmutableMap {
+		valueSet.Insert(value.(int))
+	}
+	return valueSet
 }
 
 // GenerateSubSets C is union of all subsets

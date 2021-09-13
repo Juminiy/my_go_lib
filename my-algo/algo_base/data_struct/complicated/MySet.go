@@ -63,11 +63,15 @@ func (set *MySet) Union(cSet *MySet) *MySet {
 func (set *MySet) Unite(cSet *MySet) *MySet {
 	uniteSet := &MySet{}
 	uniteSet.Construct()
-	for ele, _ := range set.ImmutableMap {
-		uniteSet.Insert(ele)
+	if set != nil && set.Len() > 0 {
+		for ele, _ := range set.ImmutableMap {
+			uniteSet.Insert(ele)
+		}
 	}
-	for ele, _ := range cSet.ImmutableMap {
-		uniteSet.Insert(ele)
+	if cSet != nil && cSet.Len() > 0 {
+		for ele, _ := range cSet.ImmutableMap {
+			uniteSet.Insert(ele)
+		}
 	}
 	return uniteSet
 }
@@ -84,4 +88,21 @@ func (set *MySet) Diff(cSet *MySet) *MySet {
 		}
 	}
 	return diffSet
+}
+func (set *MySet) Equal(cSet *MySet) bool {
+	if set == nil && cSet == nil {
+		return true
+	}
+	if set != nil && set.Len() > 0 && cSet != nil && cSet.Len() > 0 {
+		unionSet := set.Union(cSet)
+		if unionSet != nil &&
+			unionSet.Len() != 0 &&
+			unionSet.Len() == set.Len() &&
+			unionSet.Len() == cSet.Len() {
+			return true
+		} else {
+			return true
+		}
+	}
+	return false
 }

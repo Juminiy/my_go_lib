@@ -8,21 +8,23 @@ import (
 )
 
 const (
-	blankEdge        = 0
-	DefaultDirection = true
-	defaultZero      = 0
-	defaultLen       = 1 << 5
-	defaultCap       = 1 << maxBin
+	blankEdge              = 0
+	DefaultIsBiDirectional = true
+	defaultZero            = 0
+	defaultLen             = 1 << 5
+	defaultCap             = 1 << maxBin
 
-	nodeNotExist = 0
-	edgeNotExist = 0
-	EdgeEpsilon  = "epsilon"
-	EdgeBlank    = "epsilon"
+	nodeIndexNotExist = -1
+	nodeNotExist      = 0
+	edgeNotExist      = 0
+	EdgeEpsilon       = "epsilon"
+	EdgeBlank         = "epsilon"
 )
 
+// graph.Nodes[nodeIndex].i from 1~N
 var curNode, curEdge = nodeNotExist, edgeNotExist
 
-// GraphNode Value&&i
+// GraphNode equal Value&&i
 type GraphNode struct {
 	Value interface{}
 	i     int
@@ -41,14 +43,16 @@ type GraphEdge struct {
 	i, j, k int
 }
 
-func (edge *GraphEdge) AssignIJ(_i, _j int) {
-	edge.i, edge.j = _i, _j
+func (edge *GraphEdge) AssignIJ(_i, _j, _k int) {
+	edge.i, edge.j, edge.k = _i, _j, _k
 }
 func (edge *GraphEdge) String() string {
 	return "Edge[" + strconv.Itoa(edge.k) + "](" + strconv.Itoa(edge.i) + " to " + strconv.Itoa(edge.j) + ")=" + fmt.Sprintf("%v", edge.Value)
 }
 
-// AdjGraph 如何记录一个点到另一个点的边value
+// AdjGraph 如何记录一个点到另一个点的边value edge(i--k-->j)
+// Nodes nodeIndex from [0,N-1]
+// Edges edgeIndex from [0,M-1]
 type AdjGraph struct {
 	Nodes            []*GraphNode
 	Adjacent         map[GraphNode][]*GraphNode
@@ -64,6 +68,7 @@ func (graph *AdjGraph) Construct(isUnidirectional bool) {
 }
 
 // AddNode i
+// nodeIndex = n-1 node.i = n
 func (graph *AdjGraph) AddNode(node *GraphNode) {
 	if node == nil {
 		return
@@ -98,12 +103,14 @@ func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
 	}
 	graph.Adjacent[*nodeI] = append(graph.Adjacent[*nodeI], nodeJ)
 	curEdge++
+	edge.i, edge.j, edge.k = i, j, curEdge
+	graph.Edges = append(graph.Edges, edge)
 	if !graph.IsUnidirectional {
 		graph.Adjacent[*nodeJ] = append(graph.Adjacent[*nodeJ], nodeI)
 		curEdge++
+		edge.j, edge.i, edge.k = i, j, curEdge
+		graph.Edges = append(graph.Edges, edge)
 	}
-	edge.i, edge.j, edge.k = i, j, curEdge
-	graph.Edges = append(graph.Edges, edge)
 }
 
 // ExistNodeValue 存在相同值的节点
@@ -116,6 +123,23 @@ func (graph *AdjGraph) ExistNodeValue(cNode *GraphNode) int {
 		}
 	}
 	return nodeNotExist
+}
+
+// NodeIToNodeIndex nodeIndex=graph.Nodes[nodeIndex].i 求nodeIndex
+// 通过node.i 求出 nodeIndex
+func (graph *AdjGraph) NodeIToNodeIndex(i int) int {
+	for nodeIndex, node := range graph.Nodes {
+		if node.i == i {
+			return nodeIndex
+		}
+	}
+	return nodeIndexNotExist
+}
+
+func (graph *AdjGraph) TestINodeIndex() {
+	for nodeIndex, node := range graph.Nodes {
+		fmt.Printf("graph.Nodes[%d] nodeIndex is %d,node.i is %d\n", nodeIndex, graph.NodeIToNodeIndex(node.i), node.i)
+	}
 }
 func (graph *AdjGraph) ExistEdgeValue(cEdge *GraphEdge) bool {
 	if cEdge != nil {
@@ -143,7 +167,7 @@ func (graph *AdjGraph) ExistEdge(i, j int, cEdge *GraphEdge) (int, int, int) {
 	return nodeNotExist, nodeNotExist, edgeNotExist
 }
 func (graph *AdjGraph) Amount() (int, int) {
-	return curNode, curEdge
+	return curNode + 1, curEdge + 1
 }
 func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 	// tAddress = tAddress.(*GraphNode)
@@ -152,46 +176,44 @@ func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 	}
 }
 
-func (graph *AdjGraph) WalkFromNodeIndex(nodeIndex int, edgeValue interface{}) *MySet {
-	if nodeIndex == nodeNotExist || edgeValue == nil {
+func (graph *AdjGraph) WalkFromNodeI(i int, edgeValue interface{}) *MySet {
+	if i == nodeNotExist || edgeValue == nil {
 		return nil
 	}
-	mySet := &MySet{}
-	mySet.Construct()
+	resultSet := &MySet{}
+	resultSet.Construct()
 	for _, edge := range graph.Edges {
-		if edge.i == nodeIndex && edge.Value.(string) == edgeValue.(string) {
-			mySet.Insert(edge.j)
+		if edge.i == i && reflect.DeepEqual(edgeValue, edge.Value) {
+			resultSet.Insert(graph.Nodes[graph.NodeIToNodeIndex(edge.j)])
 		}
 	}
-	return mySet
+	return resultSet
 }
 
-// WalkFromNodeIndexOnlyEpsilon 死循环
-func (graph *AdjGraph) WalkFromNodeIndexOnlyEpsilon(nodeIndex int) *MySet {
-	if nodeIndex == nodeNotExist {
+func (graph *AdjGraph) WalkFromNodeIOnlyEpsilon(i int) *MySet {
+	if i == nodeNotExist {
 		return nil
 	}
-	mySet, visNodes := &MySet{}, &MySet{}
+	resultSet, visNodes := &MySet{}, &MySet{}
+	resultSet.Construct()
 	visNodes.Construct()
-	mySet.Construct()
-	myQueue := &simple.MyQueue{}
-	myQueue.Push(nodeIndex)
-	mySet.Insert(graph.Nodes[nodeIndex])
-	for !myQueue.IsEmpty() {
-		nodeIndex, _ := myQueue.Front()
-		visNodes.Insert(nodeIndex)
-		myQueue.Pop()
+	walkQueue := &simple.MyQueue{}
+	walkQueue.Push(i)
+	resultSet.Insert(graph.Nodes[graph.NodeIToNodeIndex(i)])
+	for !walkQueue.IsEmpty() {
+		inode, _ := walkQueue.Front()
+		visNodes.Insert(inode)
+		walkQueue.Pop()
 		for _, edge := range graph.Edges {
-			if edge.Value == EdgeEpsilon && edge.i == nodeIndex && !visNodes.Exist(edge.j) {
-				mySet.Insert(graph.Nodes[edge.j])
-				myQueue.Push(edge.j)
-				// fmt.Printf("%d ", nodeIndex)
+			if edge.i == inode && reflect.DeepEqual(edge.Value, EdgeEpsilon) && !visNodes.Exist(edge.j) {
+				resultSet.Insert(graph.Nodes[graph.NodeIToNodeIndex(edge.j)])
+				walkQueue.Push(edge.j)
 			}
 		}
 	}
-	// fmt.Println(mySet)
-	return mySet
+	return resultSet
 }
+
 func (graph *AdjGraph) StartWithIndexEdge(nodeIndex int, a interface{}) *MySet {
 	mySet := &MySet{}
 	mySet.Construct()
@@ -202,6 +224,7 @@ func (graph *AdjGraph) StartWithIndexEdge(nodeIndex int, a interface{}) *MySet {
 	}
 	return mySet
 }
+
 func (graph *AdjGraph) BfsGraph() []interface{} {
 	if graph == nil || graph.Nodes == nil || len(graph.Nodes) == 0 {
 		return nil
