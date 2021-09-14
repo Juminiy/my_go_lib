@@ -6,6 +6,7 @@ import (
 	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
 )
 
+// 多线程线程常量不可用
 const (
 	epsilon      = "epsilon"
 	charQ        = 'q'
@@ -79,12 +80,12 @@ func NodeSetToIntValueSet(I *ISet) *ds.MySet {
 
 // GenerateSubSets C is union of all subsets
 // 求子集依赖于底层的GraphAPI提供支持
-func GenerateSubSets(faGraph *ds.AdjGraph) *ds.MySet {
+func GenerateSubSets(faGraph *ds.AdjGraph, nodes []interface{}) *ds.MySet {
 	C := &ds.MySet{} // 幂集合，集合存元素的是单个不重复子集
 	C.Construct()    // 因为序index会change，所以用队列，队列元素为单个不重复子集
 	startSet := &ISet{}
 	startSet.Construct()
-	startSet.CharSet.Insert(nodeZeroInt)
+	startSet.CharSet.SliceBatchInsert(nodes)
 	edgeValueSet := faGraph.CalculateDiffValueEdge()
 	T0 := EpsilonClosure(faGraph, startSet)
 	setQueue := &simple.MyQueue{}
@@ -105,6 +106,19 @@ func GenerateSubSets(faGraph *ds.AdjGraph) *ds.MySet {
 	}
 	return C
 }
+
+//
+//func TwoDimSetToTwoDimSlice(C *ds.MySet) [][]interface{} {
+//	if C == nil || C.Len() < 0 {
+//		return nil
+//	}
+//	Dim2Slice := make([][]interface{},0,0)
+//	for eleArr,_ := range C.ImmutableMap {
+//
+//		Dim2Slice = append(Dim2Slice, eleArr)
+//	}
+//	return Dim2Slice
+//}
 
 func SubSetByOrder(C *ds.MySet) *ds.MySet {
 	if C == nil || C.Len() == 0 {

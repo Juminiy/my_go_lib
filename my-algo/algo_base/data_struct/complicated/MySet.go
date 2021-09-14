@@ -70,6 +70,14 @@ func (set *MySet) Slice() []interface{} {
 	}
 	return eleArr
 }
+func (set *MySet) SliceBatchInsert(slice []interface{}) {
+	if slice == nil || len(slice) == 0 {
+		return
+	}
+	for _, ele := range slice {
+		set.Insert(ele)
+	}
+}
 func (set *MySet) SortSetToSlice() []interface{} {
 	setIntSlc := make([]interface{}, 0)
 	for ele, _ := range set.ImmutableMap {

@@ -45,13 +45,13 @@ func EpsilonClosureService(edges []struc.EdgeInput, nodes []interface{}) []inter
 	return tSet.CharSet.Slice()
 }
 
-func ConstructSubSetService(edges []struc.EdgeInput, nodes []interface{}) []interface{} {
+func ConstructSubSetService(edges []struc.EdgeInput, nodes []interface{}) string {
 	adj := fa.ConstructGraph(edges)
 	if nodes == nil {
 		nodes = zeroSet.CharSet.Slice()
 	}
 	// log.Println(adj.Nodes,adj.Edges)
-	tSet := fa.GenerateSubSets(adj)
+	tSet := fa.GenerateSubSets(adj, nodes)
 	log.Println(tSet)
-	return tSet.SortSetToSlice()
+	return tSet.String()
 }

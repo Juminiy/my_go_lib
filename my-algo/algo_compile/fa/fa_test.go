@@ -57,13 +57,15 @@ func TestEpsilonClosure(t *testing.T) {
 	// fmt.Println("nodes",adj.Nodes)
 	// fmt.Println("edges",adj.Edges)
 	// adj.TestINodeIndex()
-	// tSet := &ISet{} ; tSet.Construct() ; tSet.CharSet.Insert(0)
+	tSet := &ISet{}
+	tSet.Construct()
+	tSet.CharSet.Insert(0)
 	// ;tSet.CharSet.Insert(1);tSet.CharSet.Insert(2);tSet.CharSet.Insert(4);tSet.CharSet.Insert(7)
 	// fmt.Println(EpsilonClosure(adj,tSet))
 	//fmt.Println(adj.Nodes)
 	//fmt.Println(adj.StartWithIndexEdge(1,"epsilon"))
 	// fmt.Println(adj.StartWithIndexEdge())
-	C := GenerateSubSets(adj)
+	C := GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
 	fmt.Println(C)
 	//fmt.Println(EpsilonClosure(adj,tSet))
 }
