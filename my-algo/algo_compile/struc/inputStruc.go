@@ -1,7 +1,11 @@
 package struc
 
 type EdgeInput struct {
-	NodeIValue interface{} `nodeIValue:"json"`
-	NodeJValue interface{} `nodeJValue:"json"`
-	EdgeValue  interface{} `edgeValue:"json"`
+	NodeIValue interface{} `NodeIValue:"json"`
+	NodeJValue interface{} `NodeJValue:"json"`
+	EdgeValue  interface{} `EdgeValue:"json"`
+}
+type ValuesInput struct {
+	Edges []EdgeInput   `Edges:"json"`
+	Nodes []interface{} `Nodes:"json"`
 }

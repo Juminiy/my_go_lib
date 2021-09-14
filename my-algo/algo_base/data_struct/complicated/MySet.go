@@ -38,7 +38,7 @@ func (set *MySet) Erase(value interface{}) {
 }
 
 func (set *MySet) Len() int {
-	if set.ImmutableMap == nil {
+	if set == nil || set.ImmutableMap == nil {
 		return 0
 	}
 	return len(set.ImmutableMap)
@@ -55,9 +55,18 @@ func (set *MySet) String() string {
 	setStr += "]"
 	return setStr
 }
+
+func SliceToSet(dataSlice []interface{}) *MySet {
+	mySet := &MySet{}
+	mySet.Construct()
+	for _, ele := range dataSlice {
+		mySet.Insert(ele)
+	}
+	return mySet
+}
 func (set *MySet) Slice() []interface{} {
 	eleArr := make([]interface{}, 0)
-	for _, ele := range set.ImmutableMap {
+	for ele, _ := range set.ImmutableMap {
 		eleArr = append(eleArr, ele)
 	}
 	return eleArr

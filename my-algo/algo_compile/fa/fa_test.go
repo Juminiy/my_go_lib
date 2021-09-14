@@ -6,6 +6,37 @@ import (
 	"testing"
 )
 
+/** json data
+ * [
+    {
+        "NodeIValue": 0,"NodeJValue": 1,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 0,"NodeJValue": 7,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 1,"NodeJValue": 2,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 1,"NodeJValue": 4,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 2,"NodeJValue": 3,"EdgeValue":"a"
+    },{
+        "NodeIValue": 4,"NodeJValue": 5,"EdgeValue":"b"
+    },{
+        "NodeIValue": 6,"NodeJValue": 1,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 6,"NodeJValue": 7,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 3,"NodeJValue": 6,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 5,"NodeJValue": 6,"EdgeValue":"epsilon"
+    },{
+        "NodeIValue": 7,"NodeJValue": 8,"EdgeValue":"a"
+    },{
+        "NodeIValue": 8,"NodeJValue": 9,"EdgeValue":"b"
+    },{
+        "NodeIValue": 9,"NodeJValue": 10,"EdgeValue":"b"
+    }
+]
+*/
 func TestEpsilonClosure(t *testing.T) {
 	adj := &complicated.AdjGraph{}
 	adj.Construct(true)

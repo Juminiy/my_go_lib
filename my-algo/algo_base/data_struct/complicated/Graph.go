@@ -117,6 +117,7 @@ func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
 func (graph *AdjGraph) ExistNodeValue(cNode *GraphNode) int {
 	if cNode != nil {
 		for _, node := range graph.Nodes {
+			// log.Println("node.Value = ",node.Value,"cNode.Value = ",cNode)
 			if reflect.DeepEqual(node.Value, cNode.Value) {
 				return node.i
 			}

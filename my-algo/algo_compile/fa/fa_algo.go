@@ -52,8 +52,10 @@ func EpsilonClosure(faGraph *ds.AdjGraph, I *ISet) *ISet {
 		return nil
 	}
 	iSet := &ISet{CharSet: I.CharSet}
+	// log.Println(faGraph.Nodes)
 	for state, _ := range I.CharSet.ImmutableMap {
 		nodeI := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
+		// log.Println("nodeI = ",nodeI)
 		edgeEpsilonNodes := faGraph.WalkFromNodeIOnlyEpsilon(nodeI)
 		iSet.CharSet = iSet.CharSet.Unite(NodeSetToIntValueSet(&ISet{CharSet: edgeEpsilonNodes}))
 	}

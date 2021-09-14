@@ -29,7 +29,9 @@ func ApiInfoContext(ctx *fiber.Ctx) error {
 func IntMinContext(ctx *fiber.Ctx) error {
 	return ctx.JSON(format.Ok(service.IntMinAlgoService(ctx.Params("compValue"), ctx.Params("compedValue"))))
 }
-
+func IntMaxContext(ctx *fiber.Ctx) error {
+	return ctx.JSON(format.Ok(service.IntMaxAlgoService(ctx.Params("compValue"), ctx.Params("compedValue"))))
+}
 func QuickSortContext(ctx *fiber.Ctx) error {
 	arr := new(model.Arr)
 	if err := ctx.BodyParser(arr); err != nil {
@@ -45,9 +47,9 @@ func MergeSortContext(ctx *fiber.Ctx) error {
 	return ctx.JSON(format.Ok(service.IntMergeSortService(arr.TArr)))
 }
 func EpsilonClosureContext(ctx *fiber.Ctx) error {
-	inputArr := make([]struc.EdgeInput, 0)
-	if err := ctx.BodyParser(inputArr); err != nil {
+	inputData := new(struc.ValuesInput)
+	if err := ctx.BodyParser(inputData); err != nil {
 		return nil
 	}
-	return ctx.JSON(format.Ok(service.EpsilonClosureService(inputArr)))
+	return ctx.JSON(format.Ok(service.EpsilonClosureService((*inputData).Edges, (*inputData).Nodes)))
 }

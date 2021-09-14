@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.13 15:00 func EpsilonClosure() is correct">
-      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/Array.go" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.14 SubSet is Ok !">
+      <change beforePath="$PROJECT_DIR$/.idea/my_go_lib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_go_lib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/struc/inputStruc.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/struc/inputStruc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api_context/Context.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/router/algo_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router/algo_api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/service/algo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/service/algo_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +72,7 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.statistic.project.settings" />
+    <property name="settings.editor.selected.configurable" value="go" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -79,7 +83,7 @@
       <recent name="D:\my-code\Golang\src\my_go_lib\web\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1)">
+  <component name="RunManager" selected="Go Build.go build github.com/Juminiy/my_go_lib">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$" />
@@ -158,10 +162,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1)" />
         <item itemvalue="Go Test.TestStruct in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" />
-        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa" />
       </list>
     </recent_temporary>
@@ -199,7 +203,8 @@
     <MESSAGE value="2021.09.12 蚌埠住了" />
     <MESSAGE value="2021.09.13 fix graph.go bugs" />
     <MESSAGE value="2021.09.13 15:00 func EpsilonClosure() is correct" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.09.13 15:00 func EpsilonClosure() is correct" />
+    <MESSAGE value="2021.09.14 SubSet is Ok !" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.09.14 SubSet is Ok !" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -214,12 +219,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go</url>
-          <line>77</line>
+          <line>79</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go</url>
-          <line>34</line>
+          <line>64</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>

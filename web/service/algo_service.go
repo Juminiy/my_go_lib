@@ -13,12 +13,17 @@ const (
 )
 
 var sort = new(algo_basic.MySort)
-var zeroSet = &fa.ISet{CharSet: &complicated.MySet{ImmutableMap: map[interface{}]bool{"0": true}}}
+var zeroSet = &fa.ISet{CharSet: &complicated.MySet{ImmutableMap: map[interface{}]bool{0: true}}}
 
 func IntMinAlgoService(compValue, compedValue string) int {
 	intComp, _ := strconv.Atoi(compValue)
 	intComped, _ := strconv.Atoi(compedValue)
 	return algo_basic.MinValue(intComp, intComped)
+}
+func IntMaxAlgoService(compValue, compedValue string) int {
+	intComp, _ := strconv.Atoi(compValue)
+	intComped, _ := strconv.Atoi(compedValue)
+	return algo_basic.MaxValue(intComp, intComped)
 }
 func IntQuickSortService(arr []int) []int {
 	sort.IsAsc = true
@@ -29,8 +34,12 @@ func IntMergeSortService(arr []int) [][]int {
 	sort.IsAsc = true
 	return sort.MyMergeSort(arr, 0, len(arr)-1)
 }
-func EpsilonClosureService(inputArr []struc.EdgeInput) []interface{} {
-	adj := fa.ConstructGraph(inputArr)
-	tSet := fa.EpsilonClosure(adj, zeroSet)
+func EpsilonClosureService(edges []struc.EdgeInput, nodes []interface{}) []interface{} {
+	adj := fa.ConstructGraph(edges)
+	//log.Println(adj.Nodes)
+	if nodes == nil {
+		nodes = zeroSet.CharSet.Slice()
+	}
+	tSet := fa.EpsilonClosure(adj, &fa.ISet{CharSet: complicated.SliceToSet(nodes)})
 	return tSet.CharSet.Slice()
 }

@@ -21,10 +21,12 @@ func ApiBase(app *fiber.App) {
 	apiVersion.Get("/info", api_context.ApiInfoContext)
 	algo := apiVersion.Group("/algo")
 	algoBase := algo.Group("/base")
-	algoBase.Get("/intMin/:compValue/:compedValue", api_context.IntMinContext)
-	algoBase.Post("/intQuickSort", api_context.QuickSortContext)
-	algoBase.Post("/intMergeSort", api_context.MergeSortContext)
-	algoBase.Post("/epsilonClosure", api_context.EpsilonClosureContext)
+	algoBase.Get("/IntMin/:compValue/:compedValue", api_context.IntMinContext)
+	algoBase.Get("/IntMax/:compValue/:compedValue", api_context.IntMaxContext)
+	algoBase.Post("/IntQuickSort", api_context.QuickSortContext)
+	algoBase.Post("/IntMergeSort", api_context.MergeSortContext)
+	algoCompile := algo.Group("/compile")
+	algoCompile.Post("/EpsilonClosure", api_context.EpsilonClosureContext)
 	// 404 Handler
 	app.Use(api_context.NotFoundContext)
 }
