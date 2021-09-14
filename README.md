@@ -24,13 +24,12 @@ Go实现的数据结构
 
 2021.09.14正则表达式->NFA->DFA->DFA最小化过程
 
-本proj可被认为是FaaS(云函数)服务云原生的一种
+本proj可部署到物理机或者容器内，作为一个FaaS(云函数)服务
 
 支持三种方式调用
 
 - HTTP RESTful API 格式json
-
-- gRPC 跨语言调用 protobuf协议
+- gRPC 跨语言调用 protobuf协议 尚在开发中
 - CLIs 尚在开发中
 
 HTTP REST 形式，GET方法可以用浏览器，POST方法只能用命令行或者Postman等接口测试工具
@@ -84,6 +83,7 @@ POST方法设置HTTP-Headers Content-Type 为 application/json 请求体Body内�
 "Nodes":[ 0 ]
 }
 ```
+其他REST形式类似
 gRPC
 
 跨语言调用
@@ -93,6 +93,6 @@ CLIs
 
 命令行工具
 待开发
-![img.png](img.png)快2000line 了 
+![img.png](https://v.hualingnan.site/typora/img.png) 快2000line 了 
 2021.09.14 13:35 
 
