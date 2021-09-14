@@ -19,6 +19,13 @@ func (iset *ISet) String() string {
 		return iset.CharSet.String()
 	}
 }
+func (iset *ISet) CheckSelf() bool {
+	if iset.CharSet != nil && iset.CharSet.Len() > 0 {
+		return true
+	} else {
+		return false
+	}
+}
 
 type DFATable struct {
 	State       *ISet

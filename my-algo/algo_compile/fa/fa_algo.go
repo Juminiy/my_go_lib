@@ -31,6 +31,9 @@ func ConstructGraph(inputArr []struc.EdgeInput) *ds.AdjGraph {
 
 // Move 集合I的所有状态经过一次a边到达的状态
 func Move(faGraph *ds.AdjGraph, I *ISet, a interface{}) *ISet {
+	if I == nil || I.CharSet.Len() == 0 {
+		return nil
+	}
 	iSet := &ISet{}
 	iSet.Construct()
 	if faGraph.ExistEdgeValue(&ds.GraphEdge{Value: a}) {
@@ -77,8 +80,8 @@ func NodeSetToIntValueSet(I *ISet) *ds.MySet {
 // GenerateSubSets C is union of all subsets
 // 求子集依赖于底层的GraphAPI提供支持
 func GenerateSubSets(faGraph *ds.AdjGraph) *ds.MySet {
-	C := &ds.MySet{} // 幂集合，集合存的是子集合
-	C.Construct()    // 因为序号会变，所以用集合队列，子集作为队列元素
+	C := &ds.MySet{} // 幂集合，集合存元素的是单个不重复子集
+	C.Construct()    // 因为序index会change，所以用队列，队列元素为单个不重复子集
 	startSet := &ISet{}
 	startSet.Construct()
 	startSet.CharSet.Insert(nodeZeroInt)
@@ -108,7 +111,7 @@ func SubSetByOrder(C *ds.MySet) *ds.MySet {
 		return nil
 	}
 	for subSet, _ := range C.ImmutableMap {
-		C.Insert(subSet.(*ISet).CharSet.SortSetToIntSlice())
+		C.Insert(subSet.(*ISet).CharSet.SortSetToSlice())
 	}
 	return C
 }

@@ -5,6 +5,7 @@ import (
 	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
+	"log"
 	"strconv"
 )
 
@@ -42,4 +43,15 @@ func EpsilonClosureService(edges []struc.EdgeInput, nodes []interface{}) []inter
 	}
 	tSet := fa.EpsilonClosure(adj, &fa.ISet{CharSet: complicated.SliceToSet(nodes)})
 	return tSet.CharSet.Slice()
+}
+
+func ConstructSubSetService(edges []struc.EdgeInput, nodes []interface{}) []interface{} {
+	adj := fa.ConstructGraph(edges)
+	if nodes == nil {
+		nodes = zeroSet.CharSet.Slice()
+	}
+	// log.Println(adj.Nodes,adj.Edges)
+	tSet := fa.GenerateSubSets(adj)
+	log.Println(tSet)
+	return tSet.SortSetToSlice()
 }

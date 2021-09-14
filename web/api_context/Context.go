@@ -53,3 +53,10 @@ func EpsilonClosureContext(ctx *fiber.Ctx) error {
 	}
 	return ctx.JSON(format.Ok(service.EpsilonClosureService((*inputData).Edges, (*inputData).Nodes)))
 }
+func ConstructSubSetContext(ctx *fiber.Ctx) error {
+	inputData := new(struc.ValuesInput)
+	if err := ctx.BodyParser(inputData); err != nil {
+		return nil
+	}
+	return ctx.JSON(format.Ok(service.ConstructSubSetService((*inputData).Edges, (*inputData).Nodes)))
+}

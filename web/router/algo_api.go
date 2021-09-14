@@ -27,6 +27,7 @@ func ApiBase(app *fiber.App) {
 	algoBase.Post("/IntMergeSort", api_context.MergeSortContext)
 	algoCompile := algo.Group("/compile")
 	algoCompile.Post("/EpsilonClosure", api_context.EpsilonClosureContext)
+	algoCompile.Post("/DFA/ConstructSubSet", api_context.ConstructSubSetContext)
 	// 404 Handler
 	app.Use(api_context.NotFoundContext)
 }

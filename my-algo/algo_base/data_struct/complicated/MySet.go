@@ -2,7 +2,6 @@ package complicated
 
 import (
 	"fmt"
-	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
 	"reflect"
 )
 
@@ -71,11 +70,10 @@ func (set *MySet) Slice() []interface{} {
 	}
 	return eleArr
 }
-func (set *MySet) SortSetToIntSlice() *simple.Array {
-	setIntSlc := &simple.Array{}
-	setIntSlc.Construct()
+func (set *MySet) SortSetToSlice() []interface{} {
+	setIntSlc := make([]interface{}, 0)
 	for ele, _ := range set.ImmutableMap {
-		setIntSlc.Slice = append(setIntSlc.Slice, ele.(int))
+		setIntSlc = append(setIntSlc, ele)
 	}
 	return setIntSlc
 }
