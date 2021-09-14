@@ -225,6 +225,31 @@ func (graph *AdjGraph) StartWithIndexEdge(nodeIndex int, a interface{}) *MySet {
 	return mySet
 }
 
+// CalculateDiffValueEdge 不带空边
+func (graph *AdjGraph) CalculateDiffValueEdge() *MySet {
+	if graph == nil {
+		return nil
+	}
+	resultSet := &MySet{}
+	resultSet.Construct()
+	for _, edge := range graph.Edges {
+		if !reflect.DeepEqual(edge.Value, EdgeEpsilon) {
+			resultSet.Insert(edge.Value)
+		}
+	}
+	return resultSet
+}
+func (graph *AdjGraph) CalculateDiffValueNode() *MySet {
+	if graph == nil {
+		return nil
+	}
+	resultSet := &MySet{}
+	resultSet.Construct()
+	for _, node := range graph.Nodes {
+		resultSet.Insert(node.Value)
+	}
+	return resultSet
+}
 func (graph *AdjGraph) BfsGraph() []interface{} {
 	if graph == nil || graph.Nodes == nil || len(graph.Nodes) == 0 {
 		return nil
@@ -294,4 +319,12 @@ func (graph *AdjGraph) DfsGraph() []interface{} {
 		}
 	}
 	return seqNodes
+}
+
+func (graph *AdjGraph) FlushSelfToClearMemory() {
+
+}
+
+func (graph *AdjGraph) IsIsolatedNode() {
+
 }

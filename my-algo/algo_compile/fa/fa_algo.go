@@ -2,16 +2,18 @@ package fa
 
 import (
 	ds "github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
+	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
 )
 
 const (
-	epsilon    = "epsilon"
-	charQ      = 'q'
-	initialNum = '0'
-
-	nonEdge = 0
-	nonNode = 0
+	epsilon      = "epsilon"
+	charQ        = 'q'
+	initialNum   = '0'
+	nodeZeroInt  = 0
+	nodeZeroChar = '0'
+	nonEdge      = 0
+	nonNode      = 0
 )
 
 /*
@@ -52,30 +54,73 @@ func EpsilonClosure(faGraph *ds.AdjGraph, I *ISet) *ISet {
 	iSet := &ISet{CharSet: I.CharSet}
 	for state, _ := range I.CharSet.ImmutableMap {
 		nodeI := faGraph.ExistNodeValue(&ds.GraphNode{Value: state})
-		iSet.CharSet = iSet.CharSet.Unite(faGraph.WalkFromNodeIOnlyEpsilon(nodeI))
+		edgeEpsilonNodes := faGraph.WalkFromNodeIOnlyEpsilon(nodeI)
+		iSet.CharSet = iSet.CharSet.Unite(NodeSetToIntValueSet(&ISet{CharSet: edgeEpsilonNodes}))
 	}
 	return iSet
 }
 
 func NodeSetToIntValueSet(I *ISet) *ds.MySet {
-	if I == nil {
+	if I == nil || I.CharSet.Len() <= 0 {
 		return nil
 	}
 	valueSet := &ds.MySet{}
 	valueSet.Construct()
 	for value, _ := range I.CharSet.ImmutableMap {
-		valueSet.Insert(value.(int))
+		valueSet.Insert(value.(*ds.GraphNode).Value)
 	}
 	return valueSet
 }
 
 // GenerateSubSets C is union of all subsets
-func GenerateSubSets(faGraph *ds.AdjGraph) *ISet {
-	C := &ds.MySet{}
-	C.Construct()
-	return nil
+// 求子集依赖于底层的GraphAPI提供支持
+func GenerateSubSets(faGraph *ds.AdjGraph) *ds.MySet {
+	C := &ds.MySet{} // 幂集合，集合存的是子集合
+	C.Construct()    // 因为序号会变，所以用集合队列，子集作为队列元素
+	startSet := &ISet{}
+	startSet.Construct()
+	startSet.CharSet.Insert(nodeZeroInt)
+	edgeValueSet := faGraph.CalculateDiffValueEdge()
+	T0 := EpsilonClosure(faGraph, startSet)
+	setQueue := &simple.MyQueue{}
+	setQueue.Push(T0)
+	C.Insert(T0)
+	for !setQueue.IsEmpty() {
+		Tx, _ := setQueue.Front()
+		setQueue.Pop()
+		for edgeValue, _ := range edgeValueSet.ImmutableMap {
+			tMoveTx := Move(faGraph, Tx.(*ISet), edgeValue)
+			tMoveTx = SeparateOnlySetValue(tMoveTx)
+			TxM := EpsilonClosure(faGraph, tMoveTx)
+			if !C.DeepExist(TxM) {
+				C.Insert(TxM)
+				setQueue.Push(TxM)
+			}
+		}
+	}
+	return C
 }
 
+func SubSetByOrder(C *ds.MySet) *ds.MySet {
+	if C == nil || C.Len() == 0 {
+		return nil
+	}
+	for subSet, _ := range C.ImmutableMap {
+		C.Insert(subSet.(*ISet).CharSet.SortSetToIntSlice())
+	}
+	return C
+}
+func SeparateOnlySetValue(I *ISet) *ISet {
+	if I == nil || I.CharSet.Len() == 0 {
+		return nil
+	}
+	iSet := &ISet{}
+	iSet.Construct()
+	for ele, _ := range I.CharSet.ImmutableMap {
+		iSet.CharSet.Insert(ele.(*ds.GraphNode).Value)
+	}
+	return iSet
+}
 func RegexToGraph(regex string) *ds.AdjGraph {
 	if len(regex) == 0 {
 		return nil

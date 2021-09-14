@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.13 fix graph.go bugs">
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.13 15:00 func EpsilonClosure() is correct">
+      <change afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/Array.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" afterDir="false" />
     </list>
@@ -132,16 +134,16 @@
       <pattern value="^\QTestEpsilonClosure\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa/fa_data_structure" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestStruct in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my-algo/compile_fa/fa_data_structure" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_base/data_struct" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my-algo/compile_fa/fa_data_structure" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestEpsilonClosure\E$" />
+      <pattern value="^\QTestStruct\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -157,10 +159,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1)" />
+        <item itemvalue="Go Test.TestStruct in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" />
         <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa" />
-        <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa/fa_data_structure" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +198,8 @@
     <MESSAGE value="2021.09.12 解决图论死循环" />
     <MESSAGE value="2021.09.12 蚌埠住了" />
     <MESSAGE value="2021.09.13 fix graph.go bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.09.13 fix graph.go bugs" />
+    <MESSAGE value="2021.09.13 15:00 func EpsilonClosure() is correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.09.13 15:00 func EpsilonClosure() is correct" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -210,14 +213,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go</url>
-          <line>31</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go</url>
+          <line>77</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go</url>
-          <line>47</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go</url>
+          <line>34</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

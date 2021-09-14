@@ -1,6 +1,10 @@
 package complicated
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
+	"reflect"
+)
 
 type MySet struct {
 	ImmutableMap map[interface{}]bool
@@ -18,6 +22,15 @@ func (set *MySet) Exist(value interface{}) bool {
 	return set.ImmutableMap[value] == true
 }
 
+func (set *MySet) DeepExist(value interface{}) bool {
+	for ele, _ := range set.ImmutableMap {
+		if reflect.DeepEqual(ele, value) {
+			return true
+		}
+	}
+	return false
+}
+
 func (set *MySet) Erase(value interface{}) {
 	if set.Exist(value) {
 		delete(set.ImmutableMap, value)
@@ -25,6 +38,9 @@ func (set *MySet) Erase(value interface{}) {
 }
 
 func (set *MySet) Len() int {
+	if set.ImmutableMap == nil {
+		return 0
+	}
 	return len(set.ImmutableMap)
 }
 func (set *MySet) String() string {
@@ -45,6 +61,14 @@ func (set *MySet) Slice() []interface{} {
 		eleArr = append(eleArr, ele)
 	}
 	return eleArr
+}
+func (set *MySet) SortSetToIntSlice() *simple.Array {
+	setIntSlc := &simple.Array{}
+	setIntSlc.Construct()
+	for ele, _ := range set.ImmutableMap {
+		setIntSlc.Slice = append(setIntSlc.Slice, ele.(int))
+	}
+	return setIntSlc
 }
 
 // Union 交集

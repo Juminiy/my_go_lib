@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
 	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
+	"reflect"
 	"testing"
 )
 
@@ -141,4 +142,20 @@ func TestGraphPlus(t *testing.T) {
 	fmt.Println(adj.Edges)
 	adj.PrintNodes(adj.DfsGraph())
 	fmt.Printf("%p,%p", node1, node2) // 值同 指针不同
+}
+
+func TestStruct(t *testing.T) {
+	a, b := &complicated.MySet{}, &complicated.MySet{}
+	a.Construct()
+	b.Construct()
+	stru1, stru2 := &testStruct{1, "king"}, &testStruct{1, "king"}
+	fmt.Println(reflect.DeepEqual(stru1, stru2))
+	a.Insert('a')
+	a.Insert('b')
+	a.Insert('c')
+	b.Insert('c')
+	b.Insert('a')
+	b.Insert('b')
+
+	fmt.Println(reflect.DeepEqual(a, b))
 }
