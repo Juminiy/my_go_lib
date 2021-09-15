@@ -6,7 +6,7 @@ import (
 	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/input_struct"
 )
 
-// 多线程线程常量不可用
+// 多线程环境线程常量不可用 
 const (
 	epsilon      = "epsilon"
 	charQ        = 'q'
