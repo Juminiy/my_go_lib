@@ -66,8 +66,11 @@ func TestEpsilonClosure(t *testing.T) {
 	//fmt.Println(adj.Nodes)
 	//fmt.Println(adj.StartWithIndexEdge(1,"epsilon"))
 	// fmt.Println(adj.StartWithIndexEdge())
-	C := finite_automata.GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
-	fmt.Println(C)
+	//C := finite_automata.GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
+	//fmt.Println(C)
+	dfa := finite_automata.NFAToDFA(adj, tSet.CharSet.SortSetToSlice())
+	fmt.Println(dfa.Nodes)
+	fmt.Println(dfa.Edges)
 	//fmt.Println(EpsilonClosure(adj,tSet))
 }
 

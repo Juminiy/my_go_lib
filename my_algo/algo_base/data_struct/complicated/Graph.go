@@ -22,9 +22,6 @@ const (
 	EdgeBlank         = "epsilon"
 )
 
-// graph.Nodes[nodeIndex].i from 1~N
-var curNode, curEdge = nodeNotExist, edgeNotExist
-
 // GraphNode equal Value&&i
 type GraphNode struct {
 	Value interface{}
@@ -50,22 +47,28 @@ func (edge *GraphEdge) AssignIJ(_i, _j, _k int) {
 func (edge *GraphEdge) String() string {
 	return "Edge[" + strconv.Itoa(edge.k) + "](" + strconv.Itoa(edge.i) + " to " + strconv.Itoa(edge.j) + ")=" + fmt.Sprintf("%v", edge.Value)
 }
+func (graph *AdjGraph) EdgeValueString() string {
+	return ""
+}
 
 // AdjGraph 如何记录一个点到另一个点的边value edge(i--k-->j)
 // Nodes nodeIndex from [0,N-1]
 // Edges edgeIndex from [0,M-1]
 type AdjGraph struct {
-	Nodes            []*GraphNode
-	Adjacent         map[GraphNode][]*GraphNode
-	Edges            []*GraphEdge
-	IsUnidirectional bool
+	Nodes    []*GraphNode
+	Adjacent map[GraphNode][]*GraphNode
+	Edges    []*GraphEdge
+
+	IsUnidirectional   bool
+	curNodes, curEdges int // graph.Nodes[nodeIndex].i from 1~N
 }
 
 func (graph *AdjGraph) Construct(isUnidirectional bool) {
 	graph.Nodes = make([]*GraphNode, 0)
 	graph.Edges = make([]*GraphEdge, 0)
-	graph.IsUnidirectional = isUnidirectional
 	graph.Adjacent = make(map[GraphNode][]*GraphNode, 0)
+	graph.IsUnidirectional = isUnidirectional
+	graph.curNodes, graph.curEdges = nodeNotExist, edgeNotExist
 }
 
 // AddNode i
@@ -78,8 +81,8 @@ func (graph *AdjGraph) AddNode(node *GraphNode) {
 	if i != nodeNotExist {
 		return
 	}
-	curNode++
-	node.i = curNode
+	graph.curNodes++
+	node.i = graph.curNodes
 	graph.Nodes = append(graph.Nodes, node)
 }
 
@@ -96,20 +99,20 @@ func (graph *AdjGraph) AddEdge(nodeI, nodeJ *GraphNode, edge *GraphEdge) {
 	}
 	if i == nodeNotExist {
 		graph.AddNode(nodeI)
-		i = curNode
+		i = graph.curNodes
 	}
 	if j == nodeNotExist {
 		graph.AddNode(nodeJ)
-		j = curNode
+		j = graph.curNodes
 	}
 	graph.Adjacent[*nodeI] = append(graph.Adjacent[*nodeI], nodeJ)
-	curEdge++
-	edge.i, edge.j, edge.k = i, j, curEdge
+	graph.curEdges++
+	edge.i, edge.j, edge.k = i, j, graph.curEdges
 	graph.Edges = append(graph.Edges, edge)
 	if !graph.IsUnidirectional {
 		graph.Adjacent[*nodeJ] = append(graph.Adjacent[*nodeJ], nodeI)
-		curEdge++
-		edge.j, edge.i, edge.k = i, j, curEdge
+		graph.curEdges++
+		edge.j, edge.i, edge.k = i, j, graph.curEdges
 		graph.Edges = append(graph.Edges, edge)
 	}
 }
@@ -169,7 +172,7 @@ func (graph *AdjGraph) ExistEdge(i, j int, cEdge *GraphEdge) (int, int, int) {
 	return nodeNotExist, nodeNotExist, edgeNotExist
 }
 func (graph *AdjGraph) Amount() (int, int) {
-	return curNode + 1, curEdge + 1
+	return graph.curNodes + 1, graph.curEdges + 1
 }
 func (graph *AdjGraph) PrintNodes(tAddress []interface{}) {
 	// tAddress = tAddress.(*GraphNode)
@@ -323,10 +326,18 @@ func (graph *AdjGraph) DfsGraph() []interface{} {
 	return seqNodes
 }
 
+// ConnectedComponents calculate graph Connectivity
+// if 1 is connected else not
+func (graph *AdjGraph) ConnectedComponents() int {
+	return 0
+}
+
 func (graph *AdjGraph) FlushSelfToClearMemory() {
 
 }
 
-func (graph *AdjGraph) IsIsolatedNode() {
+// IsIsolatedNode ensure graph isolatedNode
+// the graph that one node owns only one different value else meaningless
+func (graph *AdjGraph) IsIsolatedNode(nodeValue interface{}) {
 
 }

@@ -6,7 +6,7 @@ import (
 	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/input_struct"
 )
 
-// 多线程环境线程常量不可用 
+// 多线程环境线程常量不可用
 const (
 	epsilon      = "epsilon"
 	charQ        = 'q'
@@ -78,32 +78,55 @@ func NodeSetToIntValueSet(I *ISet) *ds.MySet {
 	return valueSet
 }
 
+// NFAGenerateSubsetsAndConstructDFA 为了消除 epsilonEdge
+func NFAGenerateSubsetsAndConstructDFA(nfaGraph *ds.AdjGraph, startNodes []interface{}) (*ds.MySet, *ds.AdjGraph) {
+	C := &ds.MySet{}
+	C.Construct() // 幂集合，集合存元素的是单个不重复子集
+	startSet := &ISet{}
+	startSet.Construct()
+	startSet.CharSet.SliceBatchInsert(startNodes)
+	edgeValueSet := nfaGraph.CalculateDiffValueEdge()
+	T0 := EpsilonClosure(nfaGraph, startSet)
+	setQueue := &simple.MyQueue{}
+	setQueue.Push(T0) // 因为index会change，所以用队列，队列元素为单个不重复子集
+	C.Insert(T0)      // dfa中的每个节点和新的nfa节点完全不同
+	dfaGraph := &ds.AdjGraph{}
+	dfaGraph.Construct(true) // 幂集中的每个子点集作为新的dfa的一个新节点，将每个节点（子集）rename 0|1|2|...|n
+	dfaNodeValue := nodeZeroInt
+	dfaNodeQueue := &simple.MyQueue{}
+	dfaNodeQueue.Push(dfaNodeValue)
+	ExistNodesMap := make(map[*ISet]int, 0)
+	dfaNodeValue++
+	for !setQueue.IsEmpty() && !dfaNodeQueue.IsEmpty() {
+		Tx, _ := setQueue.Front()
+		geneNodeValue, _ := dfaNodeQueue.Front()
+		setQueue.Pop()
+		dfaNodeQueue.Pop()
+		for edgeValue, _ := range edgeValueSet.ImmutableMap {
+			tMoveTx := Move(nfaGraph, Tx.(*ISet), edgeValue)
+			tMoveTx = SeparateOnlySetValue(tMoveTx)
+			TxM := EpsilonClosure(nfaGraph, tMoveTx)
+			rateNodeValue := nonNode
+			if !C.DeepExist(TxM) {
+				C.Insert(TxM)
+				ExistNodesMap[TxM] = dfaNodeValue
+				setQueue.Push(TxM)
+				dfaNodeQueue.Push(dfaNodeValue)
+				rateNodeValue = dfaNodeValue
+				dfaNodeValue++
+			} else {
+				rateNodeValue = ExistNodesMap[TxM]
+			}
+			dfaGraph.AddEdge(&ds.GraphNode{Value: geneNodeValue}, &ds.GraphNode{Value: rateNodeValue}, &ds.GraphEdge{Value: edgeValue}) // 无论是否出现过，都必须加入到边集中去，并rename
+		}
+	}
+	return C, dfaGraph
+}
+
 // GenerateSubSets C is union of all subsets
 // 求子集依赖于底层的GraphAPI提供支持
 func GenerateSubSets(faGraph *ds.AdjGraph, nodes []interface{}) *ds.MySet {
-	C := &ds.MySet{} // 幂集合，集合存元素的是单个不重复子集
-	C.Construct()    // 因为序index会change，所以用队列，队列元素为单个不重复子集
-	startSet := &ISet{}
-	startSet.Construct()
-	startSet.CharSet.SliceBatchInsert(nodes)
-	edgeValueSet := faGraph.CalculateDiffValueEdge()
-	T0 := EpsilonClosure(faGraph, startSet)
-	setQueue := &simple.MyQueue{}
-	setQueue.Push(T0)
-	C.Insert(T0)
-	for !setQueue.IsEmpty() {
-		Tx, _ := setQueue.Front()
-		setQueue.Pop()
-		for edgeValue, _ := range edgeValueSet.ImmutableMap {
-			tMoveTx := Move(faGraph, Tx.(*ISet), edgeValue)
-			tMoveTx = SeparateOnlySetValue(tMoveTx)
-			TxM := EpsilonClosure(faGraph, tMoveTx)
-			if !C.DeepExist(TxM) {
-				C.Insert(TxM)
-				setQueue.Push(TxM)
-			}
-		}
-	}
+	C, _ := NFAGenerateSubsetsAndConstructDFA(faGraph, nodes)
 	return C
 }
 
@@ -140,49 +163,20 @@ func SeparateOnlySetValue(I *ISet) *ISet {
 	}
 	return iSet
 }
-func RegexToGraph(regex string) *ds.AdjGraph {
-	if len(regex) == 0 {
-		return nil
-	}
-	adj := &ds.AdjGraph{}
-	adj.Construct(true)
-	startNode, q0Node := &ds.GraphNode{Value: "start"}, &ds.GraphNode{Value: charQ + initialNum}
-	adj.AddNode(startNode)
-	adj.AddNode(q0Node)
-	// subStr := ""
-	for _, ch := range regex {
-		switch ch {
-		case '(':
-			{
 
-				break
-			}
-		case ')':
-			{
-				break
-			}
-		case '|':
-			{
-				break
-			}
-
-		default:
-			{
-
-			}
-		}
-	}
-	return adj
-}
-func (nfa *NFA) RegexToNFA(regexStr string) {
-
+func RegexToNFA(regex string) *ds.AdjGraph {
+	return nil
 }
 
-func (*DFA) NFAToDFA(nfa *NFA) (dfa *DFA) {
+func NFAToRegex(faGraph *ds.AdjGraph) string {
+	return ""
+}
 
+func NFAToDFA(nfa *ds.AdjGraph, startNodes []interface{}) *ds.AdjGraph {
+	_, dfa := NFAGenerateSubsetsAndConstructDFA(nfa, startNodes)
 	return dfa
 }
 
-func (dfa *DFA) MinDFA() {
-
+func MinDFA() *ds.AdjGraph {
+	return nil
 }

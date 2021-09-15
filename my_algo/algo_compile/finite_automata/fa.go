@@ -1,30 +1,35 @@
 package finite_automata
 
-import "github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
-
-type ISet struct {
-	CharSet *complicated.MySet
+type IFA interface {
+	Delta(startState *ISet, edgeA *ISet) *ISet
 }
 
-func (iset *ISet) Construct() {
-	mySet := &complicated.MySet{}
-	mySet.Construct()
-	iset.CharSet = mySet
+// DFA Deterministic finite automata
+type DFA struct {
+	S            *ISet // 有穷状态集合
+	Sigma        *ISet // 输入符号表
+	InitialState *ISet // 初始状态
+	FinalState   *ISet // 终结状态
 }
 
-func (iset *ISet) String() string {
-	if iset == nil {
-		return "nil"
-	} else {
-		return iset.CharSet.String()
-	}
+//Delta function f if Delta unction
+func (dfa *DFA) Delta(startState *ISet, edgeA *ISet) *ISet {
+	return nil
 }
-func (iset *ISet) CheckSelf() bool {
-	if iset.CharSet != nil && iset.CharSet.Len() > 0 {
-		return true
-	} else {
-		return false
-	}
+
+// NFA NonDeterministic finite automata
+type NFA struct {
+	S            *ISet
+	Sigma        *ISet
+	InitialState *ISet
+	FinalState   *ISet
+
+	withEpsilon bool // 是否带有空边
+}
+
+// Delta is Edge Description
+func (nfa *NFA) Delta(startState *ISet, edgeA *ISet) *ISet {
+	return nil
 }
 
 type DFATable struct {

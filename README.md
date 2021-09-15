@@ -96,3 +96,10 @@ CLIs
 ![img.png](https://v.hualingnan.site/typora/img.png) 快2000line 了 
 2021.09.14 13:35 
 
+2021.09.15 
+- 不能完全保证算法的正确，需要大量数据去验证
+- 在debug过程中内存泄漏，引用非法，dereference指针异常
+从这个状态
+![](https://v.hualingnan.site/typora/nfa1_1.jpeg) 
+转换到
+![](https://v.hualingnan.site/typora/dfa1_1.jpeg)
