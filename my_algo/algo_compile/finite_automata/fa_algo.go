@@ -1,9 +1,9 @@
-package fa
+package finite_automata
 
 import (
-	ds "github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
-	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
-	"github.com/Juminiy/my_go_lib/my-algo/algo_compile/struc"
+	ds "github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/simple"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/input_struct"
 )
 
 // 多线程线程常量不可用
@@ -21,7 +21,7 @@ const (
  * function run depends on the graph
  */
 
-func ConstructGraph(inputArr []struc.EdgeInput) *ds.AdjGraph {
+func ConstructGraph(inputArr []input_struct.EdgeInput) *ds.AdjGraph {
 	adj := &ds.AdjGraph{}
 	adj.Construct(true)
 	for _, edge := range inputArr {
@@ -173,4 +173,16 @@ func RegexToGraph(regex string) *ds.AdjGraph {
 		}
 	}
 	return adj
+}
+func (nfa *NFA) RegexToNFA(regexStr string) {
+
+}
+
+func (*DFA) NFAToDFA(nfa *NFA) (dfa *DFA) {
+
+	return dfa
+}
+
+func (dfa *DFA) MinDFA() {
+
 }

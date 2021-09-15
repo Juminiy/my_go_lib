@@ -2,7 +2,7 @@ package complicated
 
 import (
 	"fmt"
-	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/simple"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/simple"
 	"reflect"
 	"strconv"
 )
@@ -17,6 +17,7 @@ const (
 	nodeIndexNotExist = -1
 	nodeNotExist      = 0
 	edgeNotExist      = 0
+	Epsilon           = "epsilon"
 	EdgeEpsilon       = "epsilon"
 	EdgeBlank         = "epsilon"
 )

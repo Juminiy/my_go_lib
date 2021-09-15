@@ -4,10 +4,41 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.14 add README.md Delete Some Unusual Files">
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.14 add Start make 语法分析 &amp; 语义分析">
+      <change afterPath="$PROJECT_DIR$/web/middleware/oauth2_qq.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/.idea/my-algo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/.idea/my-algo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/algo_basic/algo_base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/algo_basic/algo_base_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/algo_basic/algo_base_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/AVL.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/avl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BST.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/bst.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/BidirectionalLinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/bidirectional_linkedlist.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/MySet.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/MySet.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/RB.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/rb_tree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/complicated/SkipList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/skip_list.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/Array.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/Array.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/BinaryTree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/BinaryTree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/LinkedList.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/LinkedList.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyHeap.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/MyHeap.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyQueue.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/MyQueue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/data_struct/simple/MyStack.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/MyStack.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/st/st.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/heaven_struct/quick_ds/st.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/st/st_benckmark_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/heaven_struct/st_benckmark_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_base/st/testdata/st_test_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/heaven_struct/testdata/st_test_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/DFA.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/dfa.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/FA.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_algo.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa_algo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/fa_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-algo/algo_compile/struc/inputStruc.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/input_struct/input_struct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api_context/Context.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/service/algo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/service/algo_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,14 +99,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_base\heaven_struct\quick_ds" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\finite_automata" />
       <recent name="D:\my-code\Golang\src\my_go_lib" />
       <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_compile\fa" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\compile_fa" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\compile_fa\fa_data_structure" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\web\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/Juminiy/my_go_lib">
+  <component name="RunManager" selected="Go Test.TestISet_CheckSelf in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$" />
@@ -118,16 +149,16 @@
       <pattern value="^\QTestEpsilonClosure\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestISet_CheckSelf in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my-algo/compile_fa" />
+      <working_directory value="$PROJECT_DIR$/my-algo/algo_compile/fa" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my-algo/compile_fa" />
+      <package value="github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestEpsilonClosure\E$" />
+      <pattern value="^\QTestISet_CheckSelf\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestStruct in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -154,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestISet_CheckSelf in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" />
         <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1)" />
         <item itemvalue="Go Test.TestStruct in github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct" />
         <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa" />
-        <item itemvalue="Go Test.TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/compile_fa" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +231,8 @@
     <MESSAGE value="2021.09.14 12:50.am. add CLIs and gRPC service" />
     <MESSAGE value="2021.09.14 add README.md" />
     <MESSAGE value="2021.09.14 add README.md Delete Some Unusual Files" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.09.14 add README.md Delete Some Unusual Files" />
+    <MESSAGE value="2021.09.14 add Start make 语法分析 &amp; 语义分析" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.09.14 add Start make 语法分析 &amp; 语义分析" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -209,17 +241,6 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/my-algo/algo_compile/fa/fa_test.go</url>
-          <line>67</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_go_lib$TestEpsilonClosure_in_github_com_Juminiy_my_go_lib_my_algo_algo_compile_fa__1_.out" NAME="TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1) Coverage Results" MODIFIED="1631497832164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

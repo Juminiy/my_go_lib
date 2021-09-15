@@ -1,4 +1,4 @@
-package struc
+package input_struct
 
 type EdgeInput struct {
 	NodeIValue interface{} `NodeIValue:"json"`

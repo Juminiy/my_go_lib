@@ -1,6 +1,6 @@
-package fa
+package finite_automata
 
-import "github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
+import "github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
 
 type ISet struct {
 	CharSet *complicated.MySet

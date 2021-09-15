@@ -3,6 +3,7 @@ package complicated
 import (
 	"fmt"
 	"reflect"
+	"strconv"
 )
 
 type MySet struct {
@@ -127,6 +128,70 @@ func (set *MySet) Diff(cSet *MySet) *MySet {
 		}
 	}
 	return diffSet
+}
+
+func TypeForcedTransfer(value interface{}) string {
+	typeName, ValueStr := reflect.TypeOf(value).Name(), ""
+	switch typeName {
+	case "int":
+		ValueStr = strconv.Itoa(value.(int))
+		break
+	case "bool":
+		ValueStr = strconv.Itoa(value.(int))
+		break
+	case "float":
+		ValueStr = strconv.FormatFloat(value.(float64), 8, 0, 64)
+		break
+	case "int32":
+		ValueStr = strconv.FormatInt(int64(value.(int32)-49), 10)
+	default:
+		ValueStr = value.(string)
+	}
+	return ValueStr
+}
+
+// Multiple 乘积
+func (set *MySet) Product(cSet *MySet) *MySet {
+	if set == nil || cSet == nil || set.Len() < 1 || cSet.Len() < 1 {
+		return nil
+	}
+	multipleSet := &MySet{}
+	multipleSet.Construct()
+	for ele1, _ := range set.ImmutableMap {
+		for ele2, _ := range cSet.ImmutableMap {
+			tEle1, tEle2 := TypeForcedTransfer(ele1), TypeForcedTransfer(ele2)
+			multipleSet.Insert(tEle1 + tEle2)
+		}
+	}
+	return multipleSet
+}
+func (set *MySet) Power(n int) *MySet {
+	if n < 1 || set == nil || set.Len() < 1 {
+		return nil
+	}
+	powerSet := &MySet{}
+	powerSet.Construct()
+	for i := 1; i <= n; i++ {
+		powerSet = powerSet.Product(set)
+	}
+	return powerSet
+}
+
+// PositiveClosure 因为没有边界所以需要约束N
+func (set *MySet) PositiveClosure(n int) *MySet {
+	closureSet := &MySet{}
+	closureSet.Construct()
+	for i := 1; i <= n; i++ {
+		closureSet = closureSet.Unite(set.Power(i))
+	}
+	return closureSet
+}
+
+// KleeneClosure 在PositiveClosure加一个空边即可
+func (set *MySet) KleeneClosure(n int) *MySet {
+	kleeneClosure := set.PositiveClosure(n)
+	kleeneClosure.Insert(Epsilon)
+	return kleeneClosure
 }
 func (set *MySet) Equal(cSet *MySet) bool {
 	if set == nil && cSet == nil {

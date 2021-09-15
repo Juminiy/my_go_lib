@@ -1,8 +1,9 @@
-package fa
+package algo_compile
 
 import (
 	"fmt"
-	"github.com/Juminiy/my_go_lib/my-algo/algo_base/data_struct/complicated"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/finite_automata"
 	"testing"
 )
 
@@ -57,7 +58,7 @@ func TestEpsilonClosure(t *testing.T) {
 	// fmt.Println("nodes",adj.Nodes)
 	// fmt.Println("edges",adj.Edges)
 	// adj.TestINodeIndex()
-	tSet := &ISet{}
+	tSet := &finite_automata.ISet{}
 	tSet.Construct()
 	tSet.CharSet.Insert(0)
 	// ;tSet.CharSet.Insert(1);tSet.CharSet.Insert(2);tSet.CharSet.Insert(4);tSet.CharSet.Insert(7)
@@ -65,7 +66,19 @@ func TestEpsilonClosure(t *testing.T) {
 	//fmt.Println(adj.Nodes)
 	//fmt.Println(adj.StartWithIndexEdge(1,"epsilon"))
 	// fmt.Println(adj.StartWithIndexEdge())
-	C := GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
+	C := finite_automata.GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
 	fmt.Println(C)
 	//fmt.Println(EpsilonClosure(adj,tSet))
+}
+
+func TestISet_CheckSelf(t *testing.T) {
+	a := &complicated.MySet{}
+	a.Construct()
+	b := &complicated.MySet{}
+	b.Construct()
+	a.Insert('1')
+	a.Insert('2')
+	b.Insert(1)
+	b.Insert(2)
+	fmt.Println(a.Product(b))
 }

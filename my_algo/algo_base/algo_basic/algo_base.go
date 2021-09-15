@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// 算法经过 https://luogu.com.cn/problem/P1177 测试，保证正确性
+// 算法经过 https://luogu.com.cn/problem/P1177 测试
 
 const (
 	maxBit        = 31
