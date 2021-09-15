@@ -177,6 +177,6 @@ func NFAToDFA(nfa *ds.AdjGraph, startNodes []interface{}) *ds.AdjGraph {
 	return dfa
 }
 
-func MinDFA() *ds.AdjGraph {
+func MinDFA(nfa *ds.AdjGraph, startNodes []interface{}) *ds.AdjGraph {
 	return nil
 }

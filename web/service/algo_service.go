@@ -1,6 +1,7 @@
 package service
 
 import (
+	"fmt"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/finite_automata"
@@ -45,13 +46,28 @@ func EpsilonClosureService(edges []input_struct.EdgeInput, nodes []interface{}) 
 	return tSet.CharSet.Slice()
 }
 
-func ConstructSubSetService(edges []input_struct.EdgeInput, nodes []interface{}) string {
+func ConstructSubSetsService(edges []input_struct.EdgeInput, nodes []interface{}) string {
 	adj := finite_automata.ConstructGraph(edges)
 	if nodes == nil {
 		nodes = zeroSet.CharSet.Slice()
 	}
-	// log.Println(adj.Nodes,adj.Edges)
 	tSet := finite_automata.GenerateSubSets(adj, nodes)
 	log.Println(tSet)
 	return tSet.String()
+}
+func NFAToDFAService(edges []input_struct.EdgeInput, nodes []interface{}) string {
+	adj := finite_automata.ConstructGraph(edges)
+	if nodes == nil {
+		nodes = zeroSet.CharSet.Slice()
+	}
+	dfa := finite_automata.NFAToDFA(adj, nodes)
+	return fmt.Sprintf("%v", dfa)
+}
+func MinDFAService(edges []input_struct.EdgeInput, nodes []interface{}) string {
+	adj := finite_automata.ConstructGraph(edges)
+	if nodes == nil {
+		nodes = zeroSet.CharSet.Slice()
+	}
+	minDfa := finite_automata.MinDFA(adj, nodes)
+	return fmt.Sprintf("%v", minDfa)
 }

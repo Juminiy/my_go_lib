@@ -53,10 +53,24 @@ func EpsilonClosureContext(ctx *fiber.Ctx) error {
 	}
 	return ctx.JSON(format.Ok(service.EpsilonClosureService((*inputData).Edges, (*inputData).Nodes)))
 }
-func ConstructSubSetContext(ctx *fiber.Ctx) error {
+func ConstructSubSetsContext(ctx *fiber.Ctx) error {
 	inputData := new(input_struct.ValuesInput)
 	if err := ctx.BodyParser(inputData); err != nil {
 		return nil
 	}
-	return ctx.JSON(format.Ok(service.ConstructSubSetService((*inputData).Edges, (*inputData).Nodes)))
+	return ctx.JSON(format.Ok(service.ConstructSubSetsService((*inputData).Edges, (*inputData).Nodes)))
+}
+func NFAToDFAContext(ctx *fiber.Ctx) error {
+	inputData := new(input_struct.ValuesInput)
+	if err := ctx.BodyParser(inputData); err != nil {
+		return nil
+	}
+	return ctx.JSON(format.Ok(service.NFAToDFAService((*inputData).Edges, (*inputData).Nodes)))
+}
+func MinDFAContext(ctx *fiber.Ctx) error {
+	inputData := new(input_struct.ValuesInput)
+	if err := ctx.BodyParser(inputData); err != nil {
+		return nil
+	}
+	return ctx.JSON(format.Ok(service.MinDFAService((*inputData).Edges, (*inputData).Nodes)))
 }

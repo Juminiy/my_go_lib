@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.15 remake dir list batch management">
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/ISet.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/Graph.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/Graph.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/fa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/fa_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/dfa.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa_algo.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/finite_automata/fa_algo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/testdata/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/testdata/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api_context/Context.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/router/algo_api.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router/algo_api.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/service/algo_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/service/algo_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
