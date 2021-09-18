@@ -36,7 +36,13 @@ func (set *MySet) Erase(value interface{}) {
 		delete(set.ImmutableMap, value)
 	}
 }
-
+func (set *MySet) EraseAll() {
+	if len(set.ImmutableMap) != 0 {
+		for ele, _ := range set.ImmutableMap {
+			delete(set.ImmutableMap, ele)
+		}
+	}
+}
 func (set *MySet) Len() int {
 	if set == nil || set.ImmutableMap == nil {
 		return 0

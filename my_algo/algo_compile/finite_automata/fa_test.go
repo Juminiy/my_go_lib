@@ -1,9 +1,8 @@
-package algo_compile
+package finite_automata
 
 import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/complicated"
-	"github.com/Juminiy/my_go_lib/my_algo/algo_compile/finite_automata"
 	"testing"
 )
 
@@ -58,7 +57,7 @@ func TestEpsilonClosure(t *testing.T) {
 	// fmt.Println("nodes",adj.Nodes)
 	// fmt.Println("edges",adj.Edges)
 	// adj.TestINodeIndex()
-	tSet := &finite_automata.ISet{}
+	tSet := &ISet{}
 	tSet.Construct()
 	tSet.CharSet.Insert(0)
 	// ;tSet.CharSet.Insert(1);tSet.CharSet.Insert(2);tSet.CharSet.Insert(4);tSet.CharSet.Insert(7)
@@ -68,7 +67,7 @@ func TestEpsilonClosure(t *testing.T) {
 	// fmt.Println(adj.StartWithIndexEdge())
 	//C := finite_automata.GenerateSubSets(adj, tSet.CharSet.SortSetToSlice())
 	//fmt.Println(C)
-	dfa := finite_automata.NFAToDFA(adj, tSet.CharSet.SortSetToSlice())
+	dfa := NFAToDFA(adj, tSet.CharSet.SortSetToSlice())
 	fmt.Println(dfa.Nodes)
 	fmt.Println(dfa.Edges)
 	//fmt.Println(EpsilonClosure(adj,tSet))

@@ -103,3 +103,7 @@ CLIs
 ![](https://v.hualingnan.site/typora/nfa1_1.jpeg) 
 转换到
 ![](https://v.hualingnan.site/typora/dfa1_1.jpeg)
+
+2021.09.16~17 摸了🐟，写了几行
+
+2021.09.18 抢到了6级😊，继续写一些复杂的数据结构，提高图论查找和字符串匹配速度

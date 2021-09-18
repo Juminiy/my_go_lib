@@ -1,8 +1,7 @@
-package heaven_struct
+package quick_ds
 
 import (
 	"fmt"
-	"github.com/Juminiy/my_go_lib/my_algo/algo_base/heaven_struct/quick_ds"
 	"testing"
 )
 
@@ -13,7 +12,7 @@ func TestST_QueryRange(t *testing.T) {
 	for i := 0; i < arrLen; i++ {
 		fmt.Scan(&arr[i])
 	}
-	stList := &quick_ds.ST{}
+	stList := &ST{}
 	stList.ConstructST(arr)
 	for i := 0; i < queryTimes; i++ {
 		fmt.Scan(&l, &r)

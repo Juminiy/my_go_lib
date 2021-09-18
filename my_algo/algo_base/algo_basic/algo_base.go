@@ -1,6 +1,7 @@
 package algo_basic
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 )
@@ -37,15 +38,15 @@ func StrToInt(str string) int {
 func IntToStr(intValue int) string {
 	return strconv.Itoa(intValue)
 }
-func IntToChar(intNum int) rune {
-	if intNum <= 9 {
-		return rune(intNum + 48)
+func IntToChar(intNum int) interface{} {
+	if intNum >= 0 && intNum <= 9 {
+		return fmt.Sprintf("%c", intNum+48)
 	} else {
-		panic("intValue must <= 9! ")
+		panic("0 <= intValue <= 9! ")
 	}
 }
 func CharToInt(char rune) int {
-	if char <= 57 {
+	if char >= 48 && char <= 57 {
 		return int(char - 48)
 	} else {
 		panic("char must range 49~57! ")
