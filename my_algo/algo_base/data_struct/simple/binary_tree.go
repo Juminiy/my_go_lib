@@ -37,8 +37,8 @@ func PostOrderVisit(bt *BinaryTree) {
 
 }
 
-// probloly a mistake
-func NonRecursionDfs(bt *BinaryTree) []interface{} {
+// Dfs probably a mistake
+func Dfs(bt *BinaryTree) []interface{} {
 	var s MyStack
 	ansSeq := make([]interface{}, 0)
 	for bt != nil || !s.IsEmpty() {

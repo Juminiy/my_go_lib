@@ -6,6 +6,7 @@ import (
 	"github.com/Juminiy/my_go_lib/web/service"
 	"github.com/Juminiy/my_go_lib/web/utils"
 	"github.com/gofiber/fiber/v2"
+	"os"
 )
 
 var format utils.JsonFormat
@@ -20,7 +21,7 @@ func NotFoundContext(ctx *fiber.Ctx) error {
 func ApiInfoContext(ctx *fiber.Ctx) error {
 	return ctx.JSON(format.Ok(fiber.Map{
 		"version":          ctx.Get("Version"),
-		"gitRepositoryUrl": "https://github.com/Juminiy/my_go_lib",
+		"gitRepositoryUrl": os.Getenv("gitRepositoryUrl"),
 		"description":      "Algorithm Api by Golang code",
 		"author":           "Alan Juminiy",
 	}))

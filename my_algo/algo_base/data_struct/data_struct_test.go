@@ -59,7 +59,7 @@ func TestNonRecursionDfs(t *testing.T) {
 	node2 := simple.BinaryTree{Value: 3}
 	node1 := simple.BinaryTree{Left: &node3, Value: 2}
 	root := &simple.BinaryTree{Left: &node1, Right: &node2, Value: 1}
-	fmt.Println(simple.NonRecursionDfs(root))
+	fmt.Println(simple.Dfs(root))
 }
 
 /** Test Data
@@ -158,4 +158,36 @@ func TestStruct(t *testing.T) {
 	b.Insert('b')
 
 	fmt.Println(reflect.DeepEqual(a, b))
+}
+
+func TestBList(t *testing.T) {
+	list := &complicated.BList{}
+	for i := 1; i <= 10; i++ {
+		list = complicated.PushFront(list, i)
+	}
+	for i := 1; i <= 10; i++ {
+		list, value := complicated.PopFront(list)
+		fmt.Printf("pop front value = %v\n", value)
+		list.ForwardTraversal()
+		list.OppositeTraversal()
+	}
+	for i := 11; i <= 15; i++ {
+		list = complicated.PushBack(list, i)
+	}
+	for i := 1; i <= 5; i++ {
+		list, value := complicated.PopBack(list)
+		fmt.Printf("pop back value = %v\n", value)
+		list.ForwardTraversal()
+		list.OppositeTraversal()
+	}
+	list, _ = complicated.PopFront(list)
+	list.ForwardTraversal()
+	list.OppositeTraversal()
+}
+
+func TestRotate(t *testing.T) {
+	//n1 := &complicated.AvlNode{Value: 1}
+	//n2 := &complicated.AvlNode{Left: n1, Value: 2}
+	//n3 := &complicated.AvlNode{Left: n2, Value: 3}
+
 }
