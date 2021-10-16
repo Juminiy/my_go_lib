@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/web/testdata" />
       <excludeFolder url="file://$MODULE_DIR$/my_algo/algo_base/heaven_struct/quick_ds/testdata" />
+      <excludeFolder url="file://$MODULE_DIR$/my_algo/algo_compile/pl0/testdata" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

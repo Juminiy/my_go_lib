@@ -4,17 +4,30 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.18 ADD COMPLICATED data stucture">
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/data_istrcut.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_base/heaven_struct/package.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3741fc42-6054-4c74-bf33-a4bfd069d370.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3741fc42-6054-4c74-bf33-a4bfd069d370.xml" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.19 add web">
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_analysis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/ans/grammar_ans.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/ans/lexical_ans.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt_01.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt_02.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt_03.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt_04.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/testfile.txt_05.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/lexical/output.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/pl0/pl0_symbol.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/pl0/pl0_symbol_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/my_go_lib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/my_go_lib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/avl.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/avl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/bidirectional_linkedlist.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/complicated/bidirectional_linkedlist.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_algo/algo_base/data_struct/data_struct_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/data_struct_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/binary_tree.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_base/data_struct/simple/binary_tree.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/grammar_analysis/top_down.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/grammar_analysis/top_down.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/grammar_analysis/top_down_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/grammar_analysis/top_down_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/api_context/Context.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api_context/Context.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,20 +84,22 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../microservice-go" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="go" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/my_algo/algo_compile/exper/submit" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\submit" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\in" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\ans" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata" />
       <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\finite_automata" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_base\heaven_struct\quick_ds" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile" />
-      <recent name="D:\my-code\Golang\src\my_go_lib" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my-algo\algo_compile\fa" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/Juminiy/my_go_lib">
+  <component name="RunManager" selected="Go Test.TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$" />
@@ -94,61 +109,61 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build github.com/Juminiy/my_go_lib" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper/submit" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib" />
+      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper/submit" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
+      <filePath value="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="TestBList in github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my_algo/algo_base/data_struct" />
+      <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/exper" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct" />
+      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestBList\E$" />
+      <pattern value="^\QTestAnalysisToken\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestKMP in github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestConst in github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my_algo/algo_base/algo_basic" />
+      <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/pl0" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" />
+      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestKMP\E$" />
+      <pattern value="^\QTestConst\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestMultiMap in github.com/Juminiy/my_go_lib/my_algo/algo_compile/grammar_analysis" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestProcessLine in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/grammar_analysis" />
+      <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/exper" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/grammar_analysis" />
+      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestMultiMap\E$" />
+      <pattern value="^\QTestProcessLine\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestMyAbs in github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestReadPCode in github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
-      <working_directory value="$PROJECT_DIR$/my_algo/algo_base/algo_basic" />
+      <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/pl0" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" />
+      <package value="github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestMyAbs\E$" />
+      <pattern value="^\QTestReadPCode\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -163,15 +178,26 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib" />
-        <item itemvalue="Go Test.TestBList in github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct" />
-        <item itemvalue="Go Test.TestKMP in github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" />
-        <item itemvalue="Go Test.TestMyAbs in github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic" />
-        <item itemvalue="Go Test.TestMultiMap in github.com/Juminiy/my_go_lib/my_algo/algo_compile/grammar_analysis" />
+        <item itemvalue="Go Test.TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
+        <item itemvalue="Go Test.TestProcessLine in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
+        <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper/submit" />
+        <item itemvalue="Go Test.TestReadPCode in github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" />
+        <item itemvalue="Go Test.TestConst in github.com/Juminiy/my_go_lib/my_algo/algo_compile/pl0" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.09.19 add web" />
+      <created>1634288652297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634288652297</updated>
+      <workItem from="1634288653653" duration="62000" />
+    </task>
+    <servers />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
@@ -212,7 +238,8 @@
     <MESSAGE value="2021.09.14 add Start make 语法分析 &amp; 语义分析" />
     <MESSAGE value="2021.09.15 remake dir list batch management" />
     <MESSAGE value="2021.09.18 ADD COMPLICATED data stucture" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.09.18 ADD COMPLICATED data stucture" />
+    <MESSAGE value="2021.09.19 add web" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.09.19 add web" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -221,8 +248,5 @@
         <entry key="GOPROXY" value="https://goproxy.io,direct" />
       </map>
     </environment>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/my_go_lib$TestEpsilonClosure_in_github_com_Juminiy_my_go_lib_my_algo_algo_compile_fa__1_.out" NAME="TestEpsilonClosure in github.com/Juminiy/my_go_lib/my-algo/algo_compile/fa (1) Coverage Results" MODIFIED="1631497832164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -186,8 +186,5 @@ func TestBList(t *testing.T) {
 }
 
 func TestRotate(t *testing.T) {
-	//n1 := &complicated.AvlNode{Value: 1}
-	//n2 := &complicated.AvlNode{Left: n1, Value: 2}
-	//n3 := &complicated.AvlNode{Left: n2, Value: 3}
-
+	complicated.TestInternal()
 }

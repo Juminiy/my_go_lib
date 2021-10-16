@@ -294,8 +294,18 @@ func (regulars *GrammarRegulars) CalculateProductionsSELECT() map[GrammarRegular
 	return allSelect
 }
 
+// ExtractLeftCommonFactor 提取左公因子
+func (regulars *GrammarRegulars) ExtractLeftCommonFactor() {
+
+}
+
 // EliminateLeftRecursion 消除左递归
 func (regulars *GrammarRegulars) EliminateLeftRecursion() {
+
+}
+
+// GenerateAbstractSyntaxTree 生成抽象语法树
+func (regulars *GrammarRegulars) GenerateAbstractSyntaxTree(str string) {
 
 }
 
