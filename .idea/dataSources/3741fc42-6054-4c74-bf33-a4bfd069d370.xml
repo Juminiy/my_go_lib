@@ -969,48 +969,48 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <user id="282" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="283" parent="2" name="user_performance"/>
-    <table id="284" parent="2" name="traditional_auth"/>
-    <column id="285" parent="283" name="performance_id">
-      <Position>1</Position>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="286" parent="283" name="click_amount">
-      <Position>2</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="287" parent="283" name="user_id">
-      <Position>3</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <column id="288" parent="283" name="relational_page_id">
-      <Position>4</Position>
-      <DataType>int|0s</DataType>
-    </column>
-    <key id="289" parent="283" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>performance_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="290" parent="284" name="auth_user_name">
+    <table id="283" parent="2" name="traditional_auth"/>
+    <table id="284" parent="2" name="user_performance"/>
+    <column id="285" parent="283" name="auth_user_name">
       <Position>1</Position>
       <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="291" parent="284" name="auth_pass_word">
+    <column id="286" parent="283" name="auth_pass_word">
       <Position>2</Position>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="292" parent="284" name="traditional_auth_auth_user_name_uindex">
+    <index id="287" parent="283" name="traditional_auth_auth_user_name_uindex">
       <ColNames>auth_user_name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="293" parent="284" name="traditional_auth_auth_user_name_uindex">
+    <key id="288" parent="283" name="traditional_auth_auth_user_name_uindex">
       <ColNames>auth_user_name</ColNames>
       <UnderlyingIndexName>traditional_auth_auth_user_name_uindex</UnderlyingIndexName>
+    </key>
+    <column id="289" parent="284" name="performance_id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="290" parent="284" name="click_amount">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="291" parent="284" name="user_id">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="292" parent="284" name="relational_page_id">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <key id="293" parent="284" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>performance_id</ColNames>
+      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>
