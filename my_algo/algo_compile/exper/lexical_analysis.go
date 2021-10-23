@@ -107,7 +107,7 @@ func processLine(file *os.File, line string) error {
 	var curStr string
 	for i := 0; i < len(line); {
 		c := line[i]
-		if c == ';' || c == ',' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '-' || c == '+' || c == '*' || c == '/' {
+		if c == ';' || c == ',' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '-' || c == '+' || c == '*' || c == '/' || (c == '=' && line[i+1] != '=') {
 			doCurStr(file, curStr)
 			curStr = fmt.Sprintf("%c", c)
 			TokenSequence = append(TokenSequence, Token{SpeciesCode[curStr], curStr})
@@ -191,23 +191,22 @@ func processLine(file *os.File, line string) error {
 			}
 			TokenSequence = append(TokenSequence, Token{SpeciesCode[specs], curs})
 			writeOutputFile(file, specs, curs)
+			i++
 		}
 	}
 	return nil
 }
 func AnalysisToken(input, output string) error {
-	file, err := os.OpenFile(input, os.O_RDWR, 0666)
+	file, err := os.OpenFile(input, os.O_RDWR, 0777)
+	os.Chmod(input, 0777)
 	if err != nil {
 		return err
 	}
 	defer file.Close()
 	buffReader := bufio.NewReader(file)
-	if _, err := os.Stat(output); err != nil {
-		if os.IsExist(err) {
-			os.Create(output)
-		}
-	}
-	outfile, err := os.OpenFile(output, os.O_APPEND, 0666)
+	os.Remove(output)
+	os.Create(output)
+	outfile, err := os.OpenFile(output, os.O_RDWR, 0777)
 	if err != nil {
 		os.Create(output)
 	}
@@ -224,13 +223,15 @@ func AnalysisToken(input, output string) error {
 	}
 	return nil
 }
-func GetNextToken() *Token {
-	cur := CurPtr
-	if CurPtr+1 > len(TokenSequence) {
+func GetNextNThToken(n int) *Token {
+	if CurPtr+n > len(TokenSequence) {
 		return nil
 	} else {
-		return &TokenSequence[cur]
+		return &TokenSequence[CurPtr+n]
 	}
+}
+func GetNextToken() *Token {
+	return GetNextNThToken(1)
 }
 func NextToken() *Token {
 	cur := CurPtr

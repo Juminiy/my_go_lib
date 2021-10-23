@@ -3,33 +3,47 @@ INTTK int
 IDENFR const1
 ASSIGN =
 INTCON 1
+<无符号整数>
+<整数>
 COMMA ,
 IDENFR const2
 ASSIGN =
 MINU -
 INTCON 100
+<无符号整数>
+<整数>
+<常量定义>
 SEMICN ;
 CONSTTK const
 CHARTK char
 IDENFR const3
 ASSIGN =
 CHARCON _
+<常量定义>
 SEMICN ;
+<常量说明>
 INTTK int
 IDENFR change1
+<变量定义>
 SEMICN ;
 CHARTK char
 IDENFR change3
+<变量定义>
 SEMICN ;
+<变量说明>
 INTTK int
 IDENFR gets1
+<声明头部>
 LPARENT (
 INTTK int
 IDENFR var1
 COMMA ,
 INTTK int
 IDENFR var2
+<参数表>
 RPARENT )
+// ok !
+<有返回值函数定义>
 LBRACE {
 IDENFR change1
 ASSIGN =
@@ -38,29 +52,40 @@ PLUS +
 IDENFR var2
 SEMICN ;
 RETURNTK return
+<声明头部>
 LPARENT (
 IDENFR change1
+<参数表>
 RPARENT )
-SEMICN ;
+<有返回值函数定义>
 RBRACE }
 VOIDTK void
 MAINTK main
+<声明头部>
 LPARENT (
+<参数表>
 RPARENT )
+<有返回值函数定义>
 LBRACE {
 PRINTFTK printf
+<声明头部>
 LPARENT (
 STRCON Hello World
+<参数表>
 RPARENT )
-SEMICN ;
+<有返回值函数定义>
 PRINTFTK printf
 LPARENT (
 IDENFR gets1
+<声明头部>
 LPARENT (
 INTCON 10
 COMMA ,
 INTCON 20
+<参数表>
 RPARENT )
+<有返回值函数定义>
 RPARENT )
 SEMICN ;
 RBRACE }
+<有返回值函数定义>

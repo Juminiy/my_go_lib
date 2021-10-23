@@ -1,0 +1,29 @@
+INTTK int
+IDENFR gets1
+<声明头部>
+LPARENT (
+INTTK int
+IDENFR var1
+COMMA ,
+INTTK int
+IDENFR var2
+<参数表>
+RPARENT )
+<有返回值函数定义>
+LBRACE {
+IDENFR change1
+ASSIGN =
+IDENFR var1
+PLUS +
+IDENFR var2
+SEMICN ;
+RETURNTK return
+<声明头部>
+LPARENT (
+IDENFR change1
+<参数表>
+RPARENT )
+<有返回值函数定义>
+SEMICN ;
+RBRACE }
+<有返回值函数定义>
