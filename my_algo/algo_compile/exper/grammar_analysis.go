@@ -85,7 +85,7 @@ func GrammarAnalysis(input, output string) error {
 	if err != nil {
 		os.Create(output)
 	}
-	defer file.Close()
+	//defer file.Close()
 	bw = bufio.NewWriter(file)
 	os.Truncate(output, 0)
 	GrammarDeduction()

@@ -1,0 +1,83 @@
+if(sum4(1, 2, 3, 4)!=10){
+        printf("1 + 2 + 3 + 4 != 10");
+    }
+    else{
+        printf("1 + 2 + 3 + 4 == 10");
+    }
+}
+
+
+
+IFTK if
+LPARENT (
+IDENFR sum4
+LPARENT (
+INTCON 1
+<整数>
+<因子>
+<项>
+<表达式>
+COMMA ,
+INTCON 2
+<整数>
+<因子>
+<项>
+<表达式>
+COMMA ,
+INTCON 3
+<整数>
+<因子>
+<项>
+<表达式>
+COMMA ,
+INTCON 4
+<整数>
+<因子>
+<项>
+<表达式>
+<值参数表>
+RPARENT )
+＜有返回值函数调用语句＞
+<因子>
+<项>
+<表达式>
+NEQ !=
+INTCON 10
+<整数>
+<因子>
+<项>
+<表达式>
+<条件>
+RPARENT )
+LBRACE {
+PRINTFTK printf
+LPARENT (
+STRCON 1 + 2 + 3 + 4 != 10
+<字符串>
+RPARENT )
+<写语句>
+SEMICN ;
+<语句>
+<语句列>
+RBRACE }
+<语句>
+ELSETK else
+LBRACE {
+PRINTFTK printf
+LPARENT (
+STRCON 1 + 2 + 3 + 4 == 10
+<字符串>
+RPARENT )
+<写语句>
+SEMICN ;
+<语句>
+<语句列>
+RBRACE }
+<语句>
+<条件语句>
+<语句>
+<语句列>
+<复合语句>
+RBRACE }
+<主函数>
+<程序>

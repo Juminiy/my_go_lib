@@ -25,6 +25,7 @@ func TestAnalysisToken(t *testing.T) {
 	//AnalysisToken("./testdata/in/testfile.txt_0"+strconv.Itoa(2)+".in", "./testdata/out/lexical/output.txt_0"+strconv.Itoa(2)+".out")
 	//CompareTwoFile("./testdata/out/lexical/output.txt_0"+strconv.Itoa(2)+".out","./testdata/out/lexical/yyz/output"+strconv.Itoa(1)+".txt")
 	fmt.Println(time.Now().Sub(tm))
+
 }
 
 func TestRetry(t *testing.T) {

@@ -202,7 +202,7 @@ func AnalysisToken(input, output string) error {
 	if err != nil {
 		return err
 	}
-	defer file.Close()
+	//defer file.Close()
 	buffReader := bufio.NewReader(file)
 	os.Remove(output)
 	os.Create(output)
@@ -210,7 +210,7 @@ func AnalysisToken(input, output string) error {
 	if err != nil {
 		os.Create(output)
 	}
-	defer file.Close()
+	//defer file.Close()
 	InitTokenSequence()
 	os.Truncate(output, 0)
 	for {

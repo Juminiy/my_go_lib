@@ -1,0 +1,67 @@
+if(k < const2){
+        printf(gets1(const1, k));
+    }
+    else{
+        printf("Hello World");
+    }
+}
+IFTK if
+LPARENT (
+IDENFR k
+<因子>
+<项>
+<表达式>
+LSS <
+IDENFR const2
+<因子>
+<项>
+<表达式>
+<条件>
+RPARENT )
+LBRACE {
+PRINTFTK printf
+LPARENT (
+IDENFR gets1
+LPARENT (
+IDENFR const1
+<因子>
+<项>
+<表达式>
+COMMA ,
+IDENFR k
+<因子>
+<项>
+<表达式>
+<值参数表>
+RPARENT )
+<有返回值函数调用语句>
+<因子>
+<项>
+<表达式>
+RPARENT )
+<写语句>
+SEMICN ;
+<语句>
+<语句列>
+RBRACE }
+<语句>
+ELSETK else
+LBRACE {
+PRINTFTK printf
+LPARENT (
+STRCON Hello World
+<字符串>
+RPARENT )
+<写语句>
+SEMICN ;
+<语句>
+<语句列>
+RBRACE }
+<语句>
+<条件语句>
+<语句>
+<语句列>
+<复合语句>
+RBRACE }
+<主函数>
+<程序>

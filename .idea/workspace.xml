@@ -4,29 +4,33 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.10.20 grammar analysis crud???!!!///">
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_const_variable_def.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_func_def.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/output.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/testfile.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/grammar/func_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/grammar/func_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/grammar/variable_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_1.txt.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_2.txt.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output_3.txt.tmp" afterDir="false" />
+    <list default="true" id="3807c8c9-7001-4f52-9610-7fff3f5e50ad" name="Changes" comment="2021.10.23 access ok !">
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_print_table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_print_table_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/fixbug.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/fixbug_case1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/output.txt.tmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/res/res_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/res/res_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/res/res_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/res/res_4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/res/res_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/table_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/table_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/table_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/table_4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/table_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outfile.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_analysis.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_analysis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_analysis_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_analysis_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/lang_def/grammar_and_token_def" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/lang_def/grammar_and_token_def" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_func_def.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/grammar_func_def.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/grammar/const_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/in/grammar/const_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output.txt.tmp" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/testdata/out/grammar/output.txt.tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/lexical_analysis_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/testfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/exper/submit/testfile.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_algo/algo_compile/pl0/pl0_symbol.go" beforeDir="false" afterPath="$PROJECT_DIR$/my_algo/algo_compile/pl0/pl0_symbol.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,18 +91,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical\outputs" />
       <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\submit" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical\outputs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\back" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper" />
+      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\submit" />
       <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\in\grammar" />
       <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\lang_def" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical\hln" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical\outputs" />
-      <recent name="D:\my-code\Golang\src\my_go_lib\my_algo\algo_compile\exper\testdata\out\lexical" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper/submit">
+  <component name="RunManager" selected="Go Test.TestGrammarAnalysisX in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$" />
@@ -129,7 +133,7 @@
       <pattern value="^\QTestAnalysisToken\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGrammarAnalysis in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/exper" />
       <root_directory value="$PROJECT_DIR$" />
@@ -138,10 +142,10 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestGrammarAnalysis\E$" />
+      <pattern value="^\QTestAnalysisToken\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGrammarAnalysis in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGrammarAnalysisX in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/exper" />
       <root_directory value="$PROJECT_DIR$" />
@@ -150,10 +154,10 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestGrammarAnalysis\E$" />
+      <pattern value="^\QTestGrammarAnalysisX\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestGrammarAnalysis3 in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGrammarDeduction in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="my_go_lib" />
       <working_directory value="$PROJECT_DIR$/my_algo/algo_compile/exper" />
       <root_directory value="$PROJECT_DIR$" />
@@ -162,7 +166,7 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestGrammarAnalysis3\E$" />
+      <pattern value="^\QTestGrammarDeduction\E$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -177,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestGrammarAnalysisX in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
+        <item itemvalue="Go Test.TestGrammarDeduction in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
         <item itemvalue="Go Build.go build github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper/submit" />
+        <item itemvalue="Go Test.TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
         <item itemvalue="Go Test.TestAnalysisToken in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper (1)" />
-        <item itemvalue="Go Test.TestGrammarAnalysis3 in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper" />
-        <item itemvalue="Go Test.TestGrammarAnalysis in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper (2)" />
-        <item itemvalue="Go Test.TestGrammarAnalysis in github.com/Juminiy/my_go_lib/my_algo/algo_compile/exper (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -214,7 +218,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="algo_base add . 2021.09.10" />
     <MESSAGE value="algo_base add . 2021.09.11" />
     <MESSAGE value="data_struct update 2021.09.11 复杂数据结构太刺激了，尤其是自己造轮子，指针乱跑！！！" />
     <MESSAGE value="data_struct update 2021.09.11 图指针准确定位" />
@@ -239,7 +242,8 @@
     <MESSAGE value="2021.09.19 add web" />
     <MESSAGE value="2021.10.16 pascal lexical &amp; grammar analysis" />
     <MESSAGE value="2021.10.20 grammar analysis crud???!!!///" />
-    <option name="LAST_COMMIT_MESSAGE" value="2021.10.20 grammar analysis crud???!!!///" />
+    <MESSAGE value="2021.10.23 access ok !" />
+    <option name="LAST_COMMIT_MESSAGE" value="2021.10.23 access ok !" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -255,7 +259,22 @@
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go</url>
           <line>228</line>
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go</url>
+          <line>5836</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go</url>
+          <line>742</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/my_algo/algo_compile/exper/submit/main.go</url>
+          <line>5835</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -148,7 +148,7 @@ func ReadPCode(codePath string) (map[string]int, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer file.Close()
+	//defer file.Close()
 	buffReader := bufio.NewReader(file)
 	for {
 		line, _, err := buffReader.ReadLine()
