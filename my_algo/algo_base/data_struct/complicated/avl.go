@@ -4,26 +4,35 @@ import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/data_struct/simple"
+	"math"
 	"reflect"
 )
 
 const (
-	immutableBalanceFactor = 1
-	maxBin                 = 31
-	maxAvlNodeAmount       = 1 << maxBin
+	immutableBalanceFactor    = 1
+	outOfBoundsBalanceFactor1 = 2
+	outOfBoundsBalanceFactor2 = -2
+	maxBin                    = 31
+	maxAvlNodeAmount          = 1 << maxBin
+	EQ                        = 10000
+	GT                        = 10001
+	LT                        = 10002
+	QS                        = 10003
+	INF                       = math.MaxInt
 )
 
 // 尽量不使用递归，效率低
-
+// 树高的问题不能有效解决
 type avlNode struct {
-	Bf          int
-	Left, Right *avlNode
-	Value       interface{}
+	Left, Right *avlNode    // Left Node Ptr, Right Node Ptr
+	Value       interface{} // Value interface{}
+	Count       int         // Same Value node in a node, Count
+	Height      int         // Node Height
 }
 
 type AvlTree struct {
-	NodeAmount int
-	AvlRoot    *avlNode
+	NodeAmount int      // Tree Total Node Counts, NodeAmount
+	AvlRoot    *avlNode // Root of Tree, AvlRoot
 }
 
 // for realTime calculation
@@ -34,14 +43,25 @@ func nodeDepth(node *avlNode) int {
 	return algo_basic.MaxValue(nodeDepth(node.Left), nodeDepth(node.Right)) + 1
 }
 
-func (node *avlNode) balanceFactor() {
-	node.Bf = nodeDepth(node.Left) - nodeDepth(node.Right)
+func balanceFactor(node *avlNode) int {
+	if node == nil {
+		return INF
+	}
+	lHeight, rHeight := 0, 0
+	if node.Left != nil {
+		lHeight = node.Left.Height
+	}
+	if node.Right != nil {
+		rHeight = node.Right.Height
+	}
+	return lHeight - rHeight
 }
 
 // llRotate ll型 向右转
 func llRotate(node *avlNode) *avlNode {
 	lNode := node.Left
 	node.Left = lNode.Right
+	node.Height = lNode.Height - 1
 	lNode.Right = node
 	return lNode
 }
@@ -50,6 +70,7 @@ func llRotate(node *avlNode) *avlNode {
 func rrRotate(node *avlNode) *avlNode {
 	rNode := node.Right
 	node.Right = rNode.Left
+	node.Height = rNode.Height - 1
 	rNode.Left = node
 	return rNode
 }
@@ -67,26 +88,71 @@ func rlRotate(node *avlNode) *avlNode {
 	node = rrRotate(node)
 	return node
 }
-
-func Comp(compedValue, compValue interface{}) bool {
-	if reflect.TypeOf(compedValue).String() == "int" && reflect.TypeOf(compValue).String() == "int" {
-		return compedValue.(int) < compValue.(int)
-	} else {
+func IntType(value interface{}) bool {
+	if reflect.TypeOf(value).String() == "int" ||
+		reflect.TypeOf(value).String() == "int32" ||
+		reflect.TypeOf(value).String() == "int64" {
 		return true
+	} else {
+		return false
+	}
+}
+
+func Comp(compedValue, compValue interface{}) int {
+	if IntType(compedValue) && IntType(compValue) {
+		compedInt, compInt := compedValue.(int), compValue.(int)
+		if compedInt == compInt {
+			return EQ
+		} else if compedInt > compInt {
+			return GT
+		} else {
+			return LT
+		}
+	} else {
+		return QS
 	}
 }
 
 func insertNode(root *avlNode, value interface{}) *avlNode {
 	if root == nil {
-		return &avlNode{Value: value}
+		return &avlNode{Value: value, Count: 1, Height: 1}
 	}
-	if Comp(value, root.Value) {
+	compRes := Comp(value, root.Value)
 
+	switch compRes {
+	case EQ:
+		{
+			root.Count++
+		}
+	case GT:
+		{
+			root.Right = insertNode(root.Right, value)
+			root.Height++
+			if balanceFactor(root) == outOfBoundsBalanceFactor2 {
+				if balanceFactor(root.Right) == -1 {
+					root = rrRotate(root)
+				} else {
+					root = lrRotate(root)
+				}
+			}
+		}
+	case LT:
+		{
+			root.Left = insertNode(root.Left, value)
+			root.Height++
+			if balanceFactor(root) == outOfBoundsBalanceFactor1 {
+				if balanceFactor(root.Left) == 1 {
+					root = llRotate(root)
+				} else {
+					root = lrRotate(root)
+				}
+			}
+		}
 	}
-	return nil
+	return root
 }
-func deleteNode() {
-
+func deleteNode(root *avlNode, value interface{}) *avlNode {
+	return nil
 }
 
 // DfsAvl midOrder arr in sequence
@@ -103,7 +169,9 @@ func (avl *AvlTree) DfsAvl() []interface{} {
 			tNode, _ := stack.Top()
 			stack.Pop()
 			root = tNode.(*avlNode)
-			seq = append(seq, root.Value)
+			for i := 0; i < root.Count; i++ {
+				seq = append(seq, root.Value)
+			}
 			root = root.Right
 		}
 	}
@@ -117,7 +185,9 @@ func (avl *AvlTree) BfsAvl() []interface{} {
 	for !queue.IsEmpty() {
 		tNode, _ := queue.Front()
 		queue.Pop()
-		seq = append(seq, tNode.(*avlNode).Value)
+		for i := 0; i < root.Count; i++ {
+			seq = append(seq, tNode.(*avlNode).Value)
+		}
 		if lNode := tNode.(*avlNode).Left; lNode != nil {
 			queue.Push(lNode)
 		}
@@ -126,6 +196,14 @@ func (avl *AvlTree) BfsAvl() []interface{} {
 		}
 	}
 	return seq
+}
+
+func (avl *AvlTree) Insert(value interface{}) {
+	avl.AvlRoot = insertNode(avl.AvlRoot, value)
+	avl.NodeAmount++
+}
+func (avl *AvlTree) Delete(value interface{}) {
+	avl.AvlRoot = deleteNode(avl.AvlRoot, value)
 }
 
 func TestInternal() {

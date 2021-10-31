@@ -37,3 +37,7 @@ func (q *MyQueue) Pop() error {
 	q.queue = q.queue[1:]
 	return nil
 }
+
+func (q *MyQueue) Traverse() {
+
+}

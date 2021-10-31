@@ -3,6 +3,7 @@ package algo_basic
 import (
 	"fmt"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic/algo_math"
+	"github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic/algo_prob"
 	"github.com/Juminiy/my_go_lib/my_algo/algo_base/algo_basic/algo_string"
 	"strings"
 	"testing"
@@ -24,4 +25,11 @@ func TestKMP(t *testing.T) {
 	algo_math.SetPrimeArr(1000)
 	fmt.Println(algo_math.IsPrime(56))
 	fmt.Println(algo_math.CalculateOrderPrime(1, 1000, 5))
+}
+
+func TestKLarge(t *testing.T) {
+	for i := 1; i <= 6; i++ {
+		x := algo_prob.FindKthLargest([]int{3, 2, 1, 5, 6, 4}, i)
+		fmt.Println(i, " th = ", x)
+	}
 }

@@ -188,3 +188,17 @@ func TestBList(t *testing.T) {
 func TestRotate(t *testing.T) {
 	complicated.TestInternal()
 }
+
+func TestAvl(t *testing.T) {
+	wi := 1
+	switch wi {
+	case 1:
+		{
+			fmt.Println(1)
+		}
+	case 2:
+		{
+			fmt.Println(2)
+		}
+	}
+}
